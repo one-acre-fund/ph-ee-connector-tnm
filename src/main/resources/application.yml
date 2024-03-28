@@ -40,7 +40,7 @@ paybill:
     - business-short-code: ${ACCOUNTS_FINERACT_PAYBILL_SHORTCODE:24322607}
       ams: "fineract"
       base-url: ${ACCOUNTS_FINERACT_BASEURL:http://127.24.0.7:5000}
-      currency: ${ACCOUNTS_FINERACT_CURRENCY:RWF}
+      currency: ${ACCOUNTS_FINERACT_CURRENCY:MWK}
     - business-short-code: ${ACCOUNTS_ROSTER_PAYBILL_SHORTCODE:12345678}
       ams: "roster"
       base-url: ${ACCOUNTS_ROSTER_BASEURL}

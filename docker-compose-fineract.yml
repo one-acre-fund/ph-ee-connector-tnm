@@ -138,6 +138,8 @@ services:
     depends_on:
       zeebe:
         condition: service_healthy
+    networks:
+      - zeebe_network
 
   operations-mysql:
     image: mysql:5.7

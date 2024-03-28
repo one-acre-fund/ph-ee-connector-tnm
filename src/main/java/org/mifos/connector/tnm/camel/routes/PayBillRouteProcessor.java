@@ -54,6 +54,7 @@ import org.mifos.connector.tnm.util.TnmUtils;
 import org.mifos.connector.tnm.zeebe.ZeebeVariables;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 /**
  * Class to process the PayBill route.
@@ -245,14 +246,18 @@ public class PayBillRouteProcessor {
      */
     public void processRequestForTransactionStatusCheck(Exchange exchange) {
         log.debug("## PayBill Transaction status check route");
+        Object tnmTransactionId = exchange.getIn().getHeader(PAYBILL_TRANSACTION_ID_URL_PARAM);
+
+        if (Objects.isNull(tnmTransactionId) || !StringUtils.hasText(tnmTransactionId.toString())) {
+            throw new RuntimeException("Transaction id is mandatory");
+        }
 
         exchange.getIn().removeHeaders("*");
         exchange.getIn().setHeader(CONTENT_TYPE, CONTENT_TYPE_VAL);
         exchange.getIn().setHeader("requestType", "transfers");
         exchange.getIn().setHeader(TENANT_ID, "oaf");
 
-        String tnmTransactionId = exchange.getIn().getHeader(PAYBILL_TRANSACTION_ID_URL_PARAM).toString();
-        exchange.setProperty(PAYBILL_TRANSACTION_ID_URL_PARAM, tnmTransactionId);
+        exchange.setProperty(PAYBILL_TRANSACTION_ID_URL_PARAM, tnmTransactionId.toString());
         exchange.setProperty(CHANNEL_URL, channelUrl);
     }
 
