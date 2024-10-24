@@ -1,0 +1,2401 @@
+
+------------------------------------------------------------
+Root project 'ph-ee-connector-tnm'
+------------------------------------------------------------
+
+annotationProcessor - Annotation processors and their dependencies for source set 'main'.
+\--- org.projectlombok:lombok:1.18.26
+
+apiElements - API elements for main. (n)
+No dependencies
+
+archives - Configuration for archive artifacts. (n)
+No dependencies
+
+bootArchives - Configuration for Spring Boot archive artifacts. (n)
+No dependencies
+
+compileClasspath - Compile classpath for source set 'main'.
++--- org.projectlombok:lombok:1.18.26
++--- org.springframework.boot:spring-boot-starter -> 2.7.6
+|    +--- org.springframework.boot:spring-boot:2.7.6
+|    |    +--- org.springframework:spring-core:5.3.24
+|    |    |    \--- org.springframework:spring-jcl:5.3.24
+|    |    \--- org.springframework:spring-context:5.3.24
+|    |         +--- org.springframework:spring-aop:5.3.24
+|    |         |    +--- org.springframework:spring-beans:5.3.24
+|    |         |    |    \--- org.springframework:spring-core:5.3.24 (*)
+|    |         |    \--- org.springframework:spring-core:5.3.24 (*)
+|    |         +--- org.springframework:spring-beans:5.3.24 (*)
+|    |         +--- org.springframework:spring-core:5.3.24 (*)
+|    |         \--- org.springframework:spring-expression:5.3.24
+|    |              \--- org.springframework:spring-core:5.3.24 (*)
+|    +--- org.springframework.boot:spring-boot-autoconfigure:2.7.6
+|    |    \--- org.springframework.boot:spring-boot:2.7.6 (*)
+|    +--- org.springframework.boot:spring-boot-starter-logging:2.7.6
+|    |    +--- ch.qos.logback:logback-classic:1.2.11
+|    |    |    +--- ch.qos.logback:logback-core:1.2.11
+|    |    |    \--- org.slf4j:slf4j-api:1.7.32 -> 1.7.36
+|    |    +--- org.apache.logging.log4j:log4j-to-slf4j:2.17.2
+|    |    |    +--- org.slf4j:slf4j-api:1.7.35 -> 1.7.36
+|    |    |    \--- org.apache.logging.log4j:log4j-api:2.17.2
+|    |    \--- org.slf4j:jul-to-slf4j:1.7.36
+|    |         \--- org.slf4j:slf4j-api:1.7.36
+|    +--- jakarta.annotation:jakarta.annotation-api:1.3.5
+|    +--- org.springframework:spring-core:5.3.24 (*)
+|    \--- org.yaml:snakeyaml:1.30
++--- org.mifos:ph-ee-connector-common:1.5.1-SNAPSHOT FAILED
++--- org.springframework.boot:spring-boot-starter-web -> 2.7.6
+|    +--- org.springframework.boot:spring-boot-starter:2.7.6 (*)
+|    +--- org.springframework.boot:spring-boot-starter-json:2.7.6
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.6 (*)
+|    |    +--- org.springframework:spring-web:5.3.24
+|    |    |    +--- org.springframework:spring-beans:5.3.24 (*)
+|    |    |    \--- org.springframework:spring-core:5.3.24 (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.4
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.14.0 -> 2.13.4 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.14.0 -> 2.13.4 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-databind:2.14.0 -> 2.13.4.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.0 -> 2.13.4 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.14.0 -> 2.13.4 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.0 (c)
+|    |    |    |         \--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.0 -> 2.13.4 (c)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.13.4
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
+|    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.4
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.13.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
+|    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.4 -> 2.14.0
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.14.0 -> 2.13.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.14.0 -> 2.13.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.14.0 -> 2.13.4.2 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.14.0 (*)
+|    |    \--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.4
+|    |         +--- com.fasterxml.jackson.core:jackson-core:2.13.4 (*)
+|    |         +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
+|    |         \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
+|    +--- org.springframework.boot:spring-boot-starter-tomcat:2.7.6
+|    |    +--- jakarta.annotation:jakarta.annotation-api:1.3.5
+|    |    +--- org.apache.tomcat.embed:tomcat-embed-core:9.0.69
+|    |    +--- org.apache.tomcat.embed:tomcat-embed-el:9.0.69
+|    |    \--- org.apache.tomcat.embed:tomcat-embed-websocket:9.0.69
+|    |         \--- org.apache.tomcat.embed:tomcat-embed-core:9.0.69
+|    +--- org.springframework:spring-web:5.3.24 (*)
+|    \--- org.springframework:spring-webmvc:5.3.24
+|         +--- org.springframework:spring-aop:5.3.24 (*)
+|         +--- org.springframework:spring-beans:5.3.24 (*)
+|         +--- org.springframework:spring-context:5.3.24 (*)
+|         +--- org.springframework:spring-core:5.3.24 (*)
+|         +--- org.springframework:spring-expression:5.3.24 (*)
+|         \--- org.springframework:spring-web:5.3.24 (*)
++--- org.springframework.boot:spring-boot-starter-actuator -> 2.7.6
+|    +--- org.springframework.boot:spring-boot-starter:2.7.6 (*)
+|    +--- org.springframework.boot:spring-boot-actuator-autoconfigure:2.7.6
+|    |    +--- org.springframework.boot:spring-boot-actuator:2.7.6
+|    |    |    \--- org.springframework.boot:spring-boot:2.7.6 (*)
+|    |    +--- org.springframework.boot:spring-boot:2.7.6 (*)
+|    |    \--- org.springframework.boot:spring-boot-autoconfigure:2.7.6 (*)
+|    \--- io.micrometer:micrometer-core:1.9.6
+|         \--- org.hdrhistogram:HdrHistogram:2.1.12
++--- org.apache.camel.springboot:camel-spring-boot-starter:3.19.0
+|    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    +--- org.apache.camel.springboot:camel-spring-boot:3.19.0
+|    |    +--- org.apache.camel:camel-spring:3.19.0
+|    |    |    +--- org.apache.camel:camel-core-engine:3.19.0
+|    |    |    |    +--- org.apache.camel:camel-api:3.19.0
+|    |    |    |    |    +--- org.apache.camel:camel-util:3.19.0
+|    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    +--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    \--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3
+|    |    |    |    |         \--- jakarta.activation:jakarta.activation-api:1.2.2
+|    |    |    |    +--- org.apache.camel:camel-base-engine:3.19.0
+|    |    |    |    |    +--- org.apache.camel:camel-base:3.19.0
+|    |    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    |    +--- org.apache.camel:camel-management-api:3.19.0
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    |    +--- org.apache.camel:camel-support:3.19.0
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-management-api:3.19.0 (*)
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    |    +--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    +--- org.apache.camel:camel-core-reifier:3.19.0
+|    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |    |    +--- org.apache.camel:camel-core-model:3.19.0
+|    |    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    |    +--- org.apache.camel:camel-core-processor:3.19.0
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |    |    |    |    \--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |    |    |    \--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    +--- org.apache.camel:camel-core-processor:3.19.0 (*)
+|    |    |    |    |    \--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    +--- org.apache.camel:camel-management-api:3.19.0 (*)
+|    |    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |    \--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-management-api:3.19.0 (*)
+|    |    |    +--- org.springframework:spring-core:5.3.23 -> 5.3.24 (*)
+|    |    |    +--- org.springframework:spring-aop:5.3.23 -> 5.3.24 (*)
+|    |    |    +--- org.springframework:spring-context:5.3.23 -> 5.3.24 (*)
+|    |    |    +--- org.springframework:spring-beans:5.3.23 -> 5.3.24 (*)
+|    |    |    +--- org.springframework:spring-expression:5.3.23 -> 5.3.24 (*)
+|    |    |    \--- org.springframework:spring-tx:5.3.23 -> 5.3.24
+|    |    |         +--- org.springframework:spring-beans:5.3.24 (*)
+|    |    |         \--- org.springframework:spring-core:5.3.24 (*)
+|    |    +--- org.apache.camel:camel-spring-main:3.19.0
+|    |    |    +--- org.apache.camel:camel-spring:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-main:3.19.0
+|    |    |         +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-base:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-management-api:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |         \--- org.apache.camel:camel-core-languages:3.19.0
+|    |    |              +--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    |              +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |              \--- org.slf4j:slf4j-api:1.7.36
+|    |    +--- org.apache.camel:camel-util-json:3.19.0
+|    |    +--- org.apache.camel:camel-xml-jaxb-dsl:3.19.0
+|    |    |    +--- org.apache.camel:camel-xml-jaxb:3.19.0
+|    |    |    |    +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3 (*)
+|    |    |    |    +--- com.sun.xml.bind:jaxb-core:2.3.0
+|    |    |    |    +--- com.sun.xml.bind:jaxb-impl:2.3.3
+|    |    |    |    |    \--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3 (*)
+|    |    |    |    +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    |    |    \--- org.apache.camel:camel-xml-jaxp:3.19.0
+|    |    |    |         +--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    |    |         +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |         \--- org.apache.camel:camel-xml-io-util:3.19.0
+|    |    |    |              \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    \--- org.apache.camel:camel-dsl-support:3.19.0
+|    |    |         +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |         \--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    +--- org.apache.camel:camel-spring-xml:3.19.0
+|    |    |    +--- org.apache.camel:camel-spring:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-xml-jaxb:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-core-xml:3.19.0
+|    |    |    |    \--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    |    \--- javax.annotation:javax.annotation-api:1.3.2
+|    |    +--- org.apache.camel:camel-cloud:3.19.0
+|    |    |    \--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    +--- org.apache.camel:camel-cluster:3.19.0
+|    |    |    +--- org.apache.camel:camel-base-engine:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    \--- org.apache.camel:camel-health:3.19.0
+|    |         +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |         \--- org.slf4j:slf4j-api:1.7.36
+|    +--- org.apache.camel.springboot:camel-core-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-spring-boot:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-bean-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-bean:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-browse-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-browse:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-controlbus-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-controlbus:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-dataformat-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-dataformat:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-dataset-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-dataset:3.19.0
+|    |    |    \--- org.apache.camel:camel-mock:3.19.0
+|    |    |         \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-direct-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-direct:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-directvm-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-directvm:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-file-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-file:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-cluster:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-language-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-language:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-log-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-log:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-mock-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-mock:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-ref-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-ref:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-rest-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-rest:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-tooling-model:3.19.0
+|    |    |         \--- org.apache.camel:camel-util-json:3.19.0
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-saga-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-saga:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-scheduler-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-scheduler:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-seda-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-seda:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-stub-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-stub:3.19.0
+|    |    |    \--- org.apache.camel:camel-vm:3.19.0
+|    |    |         \--- org.apache.camel:camel-seda:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-timer-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-timer:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-validator-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-validator:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-vm-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-vm:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-xpath-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-xpath:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-xslt-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-xslt:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    \--- org.apache.camel.springboot:camel-xml-jaxp-starter:3.19.0
+|         +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|         +--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|         \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
++--- io.camunda:zeebe-client-java:8.1.4
+|    +--- io.camunda:zeebe-bpmn-model:8.1.4
+|    |    +--- org.camunda.bpm.model:camunda-xml-model:7.17.0
+|    |    \--- org.slf4j:slf4j-api:1.7.36
+|    +--- com.fasterxml.jackson.core:jackson-core:2.14.0 -> 2.13.4 (*)
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.14.0 -> 2.13.4.2 (*)
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.14.0 -> 2.13.4 (*)
+|    +--- io.camunda:zeebe-gateway-protocol-impl:8.1.4
+|    |    +--- io.grpc:grpc-api:1.49.1
+|    |    |    +--- io.grpc:grpc-context:1.49.1
+|    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    \--- com.google.errorprone:error_prone_annotations:2.14.0
+|    |    +--- io.grpc:grpc-protobuf:1.49.1
+|    |    |    +--- io.grpc:grpc-api:1.49.1 (*)
+|    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    +--- com.google.protobuf:protobuf-java:3.21.1 -> 3.21.9
+|    |    |    +--- com.google.api.grpc:proto-google-common-protos:2.9.0
+|    |    |    |    \--- com.google.protobuf:protobuf-java:3.21.1 -> 3.21.9
+|    |    |    \--- io.grpc:grpc-protobuf-lite:1.49.1
+|    |    |         \--- io.grpc:grpc-api:1.49.1 (*)
+|    |    +--- io.grpc:grpc-stub:1.49.1
+|    |    |    +--- io.grpc:grpc-api:1.49.1 (*)
+|    |    |    \--- com.google.guava:guava:31.1-android -> 31.1-jre
+|    |    |         +--- com.google.guava:failureaccess:1.0.1
+|    |    |         +--- com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava
+|    |    |         +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |         +--- org.checkerframework:checker-qual:3.12.0
+|    |    |         +--- com.google.errorprone:error_prone_annotations:2.11.0 -> 2.14.0
+|    |    |         \--- com.google.j2objc:j2objc-annotations:1.3
+|    |    +--- com.google.guava:guava:31.1-jre (*)
+|    |    \--- com.google.protobuf:protobuf-java:3.21.9
+|    +--- org.slf4j:slf4j-api:1.7.36
+|    +--- io.grpc:grpc-stub:1.49.1 (*)
+|    +--- io.grpc:grpc-core:1.49.1
+|    |    \--- io.grpc:grpc-api:1.49.1 (*)
+|    +--- io.grpc:grpc-api:1.49.1 (*)
+|    +--- io.grpc:grpc-netty:1.49.1
+|    |    +--- io.grpc:grpc-core:1.49.1 (*)
+|    |    \--- io.netty:netty-codec-http2:4.1.77.Final -> 4.1.85.Final
+|    |         +--- io.netty:netty-common:4.1.85.Final
+|    |         +--- io.netty:netty-buffer:4.1.85.Final
+|    |         |    \--- io.netty:netty-common:4.1.85.Final
+|    |         +--- io.netty:netty-transport:4.1.85.Final
+|    |         |    +--- io.netty:netty-common:4.1.85.Final
+|    |         |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |         |    \--- io.netty:netty-resolver:4.1.85.Final
+|    |         |         \--- io.netty:netty-common:4.1.85.Final
+|    |         +--- io.netty:netty-codec:4.1.85.Final
+|    |         |    +--- io.netty:netty-common:4.1.85.Final
+|    |         |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |         |    \--- io.netty:netty-transport:4.1.85.Final (*)
+|    |         +--- io.netty:netty-handler:4.1.85.Final
+|    |         |    +--- io.netty:netty-common:4.1.85.Final
+|    |         |    +--- io.netty:netty-resolver:4.1.85.Final (*)
+|    |         |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |         |    +--- io.netty:netty-transport:4.1.85.Final (*)
+|    |         |    +--- io.netty:netty-transport-native-unix-common:4.1.85.Final
+|    |         |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |         |    |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |         |    |    \--- io.netty:netty-transport:4.1.85.Final (*)
+|    |         |    \--- io.netty:netty-codec:4.1.85.Final (*)
+|    |         \--- io.netty:netty-codec-http:4.1.85.Final
+|    |              +--- io.netty:netty-common:4.1.85.Final
+|    |              +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |              +--- io.netty:netty-transport:4.1.85.Final (*)
+|    |              +--- io.netty:netty-codec:4.1.85.Final (*)
+|    |              \--- io.netty:netty-handler:4.1.85.Final (*)
+|    +--- com.google.protobuf:protobuf-java:3.21.9
+|    +--- io.netty:netty-handler:4.1.82.Final -> 4.1.85.Final (*)
+|    +--- io.netty:netty-common:4.1.82.Final -> 4.1.85.Final
+|    \--- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.0 -> 2.13.4
+|         +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
+|         +--- org.yaml:snakeyaml:1.31 -> 1.30
+|         +--- com.fasterxml.jackson.core:jackson-core:2.13.4 (*)
+|         \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
++--- org.apache.camel.springboot:camel-jackson-starter:3.19.0
+|    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    +--- org.apache.camel:camel-jackson:3.19.0
+|    |    +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    \--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
+|    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
++--- org.apache.camel:camel-endpointdsl:3.19.0
+|    +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    \--- org.slf4j:slf4j-api:1.7.36
++--- org.apache.camel:camel-undertow:3.19.0
+|    +--- org.apache.camel:camel-base:3.19.0 (*)
+|    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    +--- org.apache.camel:camel-cloud:3.19.0 (*)
+|    +--- org.apache.camel:camel-attachments:3.19.0
+|    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- com.sun.activation:javax.activation:1.2.0
+|    +--- org.apache.camel:camel-http-base:3.19.0
+|    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    +--- io.undertow:undertow-core:2.2.19.Final -> 2.2.20.Final
+|    |    +--- org.jboss.logging:jboss-logging:3.4.1.Final -> 3.4.3.Final
+|    |    +--- org.jboss.xnio:xnio-api:3.8.7.Final
+|    |    |    +--- org.wildfly.common:wildfly-common:1.5.4.Final
+|    |    |    \--- org.wildfly.client:wildfly-client-config:1.0.1.Final
+|    |    |         \--- org.jboss.logging:jboss-logging:3.3.1.Final -> 3.4.3.Final
+|    |    \--- org.jboss.threads:jboss-threads:3.1.0.Final
+|    |         \--- org.jboss.logging:jboss-logging:3.4.1.Final -> 3.4.3.Final
+|    \--- io.undertow:undertow-servlet:2.2.19.Final -> 2.2.20.Final
+|         +--- io.undertow:undertow-core:2.2.20.Final (*)
+|         +--- org.jboss.spec.javax.servlet:jboss-servlet-api_4.0_spec:2.0.0.Final
+|         \--- org.jboss.spec.javax.annotation:jboss-annotations-api_1.3_spec:2.0.1.Final
++--- org.apache.camel:camel-http:3.19.0
+|    +--- org.apache.camel:camel-cloud:3.19.0 (*)
+|    +--- org.apache.camel:camel-http-common:3.19.0
+|    |    +--- org.apache.camel:camel-http-base:3.19.0 (*)
+|    |    +--- org.apache.camel:camel-cloud:3.19.0 (*)
+|    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel:camel-attachments:3.19.0 (*)
+|    +--- org.apache.camel:camel-file:3.19.0 (*)
+|    +--- javax.servlet:javax.servlet-api:3.1.0 -> 4.0.1
+|    \--- org.apache.httpcomponents:httpclient:4.5.13
+|         +--- org.apache.httpcomponents:httpcore:4.4.13 -> 4.4.15
+|         \--- commons-codec:commons-codec:1.11 -> 1.15
++--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.0 (*)
++--- org.json:json:20220924
+\--- com.google.code.gson:gson:2.10.1
+
+compileOnly - Compile only dependencies for source set 'main'. (n)
+\--- org.projectlombok:lombok:1.18.26 (n)
+
+default - Configuration for default artifacts. (n)
+No dependencies
+
+developmentOnly - Configuration for development-only dependencies such as Spring Boot's DevTools.
+No dependencies
+
+implementation - Implementation only dependencies for source set 'main'. (n)
++--- org.springframework.boot:spring-boot-starter (n)
++--- org.mifos:ph-ee-connector-common:1.5.1-SNAPSHOT (n)
++--- org.springframework.boot:spring-boot-starter-web (n)
++--- org.springframework.boot:spring-boot-starter-actuator (n)
++--- org.apache.camel.springboot:camel-spring-boot-starter:3.19.0 (n)
++--- io.camunda:zeebe-client-java:8.1.4 (n)
++--- org.apache.camel.springboot:camel-jackson-starter:3.19.0 (n)
++--- org.apache.camel:camel-endpointdsl:3.19.0 (n)
++--- org.apache.camel:camel-undertow:3.19.0 (n)
++--- org.apache.camel:camel-http:3.19.0 (n)
++--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.0 (n)
++--- org.json:json:20220924 (n)
+\--- com.google.code.gson:gson:2.10.1 (n)
+
+mainSourceElements - List of source directories contained in the Main SourceSet. (n)
+No dependencies
+
+productionRuntimeClasspath
++--- org.springframework.boot:spring-boot-starter -> 2.7.6
+|    +--- org.springframework.boot:spring-boot:2.7.6
+|    |    +--- org.springframework:spring-core:5.3.24
+|    |    |    \--- org.springframework:spring-jcl:5.3.24
+|    |    \--- org.springframework:spring-context:5.3.24
+|    |         +--- org.springframework:spring-aop:5.3.24
+|    |         |    +--- org.springframework:spring-beans:5.3.24
+|    |         |    |    \--- org.springframework:spring-core:5.3.24 (*)
+|    |         |    \--- org.springframework:spring-core:5.3.24 (*)
+|    |         +--- org.springframework:spring-beans:5.3.24 (*)
+|    |         +--- org.springframework:spring-core:5.3.24 (*)
+|    |         \--- org.springframework:spring-expression:5.3.24
+|    |              \--- org.springframework:spring-core:5.3.24 (*)
+|    +--- org.springframework.boot:spring-boot-autoconfigure:2.7.6
+|    |    \--- org.springframework.boot:spring-boot:2.7.6 (*)
+|    +--- org.springframework.boot:spring-boot-starter-logging:2.7.6
+|    |    +--- ch.qos.logback:logback-classic:1.2.11
+|    |    |    +--- ch.qos.logback:logback-core:1.2.11
+|    |    |    \--- org.slf4j:slf4j-api:1.7.32 -> 1.7.36
+|    |    +--- org.apache.logging.log4j:log4j-to-slf4j:2.17.2
+|    |    |    +--- org.slf4j:slf4j-api:1.7.35 -> 1.7.36
+|    |    |    \--- org.apache.logging.log4j:log4j-api:2.17.2
+|    |    \--- org.slf4j:jul-to-slf4j:1.7.36
+|    |         \--- org.slf4j:slf4j-api:1.7.36
+|    +--- jakarta.annotation:jakarta.annotation-api:1.3.5
+|    +--- org.springframework:spring-core:5.3.24 (*)
+|    \--- org.yaml:snakeyaml:1.30
++--- org.mifos:ph-ee-connector-common:1.5.1-SNAPSHOT FAILED
++--- org.springframework.boot:spring-boot-starter-web -> 2.7.6
+|    +--- org.springframework.boot:spring-boot-starter:2.7.6 (*)
+|    +--- org.springframework.boot:spring-boot-starter-json:2.7.6
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.6 (*)
+|    |    +--- org.springframework:spring-web:5.3.24
+|    |    |    +--- org.springframework:spring-beans:5.3.24 (*)
+|    |    |    \--- org.springframework:spring-core:5.3.24 (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.4
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.14.0 -> 2.13.4 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.14.0 -> 2.13.4 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-databind:2.14.0 -> 2.13.4.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.0 -> 2.13.4 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.14.0 -> 2.13.4 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.0 (c)
+|    |    |    |         \--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.0 -> 2.13.4 (c)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.13.4
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
+|    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.4
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.13.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
+|    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.4 -> 2.14.0
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.14.0 -> 2.13.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.14.0 -> 2.13.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.14.0 -> 2.13.4.2 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.14.0 (*)
+|    |    \--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.4
+|    |         +--- com.fasterxml.jackson.core:jackson-core:2.13.4 (*)
+|    |         +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
+|    |         \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
+|    +--- org.springframework.boot:spring-boot-starter-tomcat:2.7.6
+|    |    +--- jakarta.annotation:jakarta.annotation-api:1.3.5
+|    |    +--- org.apache.tomcat.embed:tomcat-embed-core:9.0.69
+|    |    +--- org.apache.tomcat.embed:tomcat-embed-el:9.0.69
+|    |    \--- org.apache.tomcat.embed:tomcat-embed-websocket:9.0.69
+|    |         \--- org.apache.tomcat.embed:tomcat-embed-core:9.0.69
+|    +--- org.springframework:spring-web:5.3.24 (*)
+|    \--- org.springframework:spring-webmvc:5.3.24
+|         +--- org.springframework:spring-aop:5.3.24 (*)
+|         +--- org.springframework:spring-beans:5.3.24 (*)
+|         +--- org.springframework:spring-context:5.3.24 (*)
+|         +--- org.springframework:spring-core:5.3.24 (*)
+|         +--- org.springframework:spring-expression:5.3.24 (*)
+|         \--- org.springframework:spring-web:5.3.24 (*)
++--- org.springframework.boot:spring-boot-starter-actuator -> 2.7.6
+|    +--- org.springframework.boot:spring-boot-starter:2.7.6 (*)
+|    +--- org.springframework.boot:spring-boot-actuator-autoconfigure:2.7.6
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4.2 (*)
+|    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.4 -> 2.14.0 (*)
+|    |    +--- org.springframework.boot:spring-boot-actuator:2.7.6
+|    |    |    \--- org.springframework.boot:spring-boot:2.7.6 (*)
+|    |    +--- org.springframework.boot:spring-boot:2.7.6 (*)
+|    |    \--- org.springframework.boot:spring-boot-autoconfigure:2.7.6 (*)
+|    \--- io.micrometer:micrometer-core:1.9.6
+|         +--- org.hdrhistogram:HdrHistogram:2.1.12
+|         \--- org.latencyutils:LatencyUtils:2.0.3
++--- org.apache.camel.springboot:camel-spring-boot-starter:3.19.0
+|    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    +--- org.apache.camel.springboot:camel-spring-boot:3.19.0
+|    |    +--- org.apache.camel:camel-spring:3.19.0
+|    |    |    +--- org.apache.camel:camel-core-engine:3.19.0
+|    |    |    |    +--- org.apache.camel:camel-api:3.19.0
+|    |    |    |    |    +--- org.apache.camel:camel-util:3.19.0
+|    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    +--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    \--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3
+|    |    |    |    |         \--- jakarta.activation:jakarta.activation-api:1.2.2
+|    |    |    |    +--- org.apache.camel:camel-base-engine:3.19.0
+|    |    |    |    |    +--- org.apache.camel:camel-base:3.19.0
+|    |    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    |    +--- org.apache.camel:camel-management-api:3.19.0
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    |    +--- org.apache.camel:camel-support:3.19.0
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-management-api:3.19.0 (*)
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    |    +--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    +--- org.apache.camel:camel-core-reifier:3.19.0
+|    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |    |    +--- org.apache.camel:camel-core-model:3.19.0
+|    |    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    |    +--- org.apache.camel:camel-core-processor:3.19.0
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |    |    |    |    \--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |    |    |    \--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    +--- org.apache.camel:camel-core-processor:3.19.0 (*)
+|    |    |    |    |    \--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    +--- org.apache.camel:camel-management-api:3.19.0 (*)
+|    |    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |    \--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-management-api:3.19.0 (*)
+|    |    |    +--- org.springframework:spring-core:5.3.23 -> 5.3.24 (*)
+|    |    |    +--- org.springframework:spring-aop:5.3.23 -> 5.3.24 (*)
+|    |    |    +--- org.springframework:spring-context:5.3.23 -> 5.3.24 (*)
+|    |    |    +--- org.springframework:spring-beans:5.3.23 -> 5.3.24 (*)
+|    |    |    +--- org.springframework:spring-expression:5.3.23 -> 5.3.24 (*)
+|    |    |    \--- org.springframework:spring-tx:5.3.23 -> 5.3.24
+|    |    |         +--- org.springframework:spring-beans:5.3.24 (*)
+|    |    |         \--- org.springframework:spring-core:5.3.24 (*)
+|    |    +--- org.apache.camel:camel-spring-main:3.19.0
+|    |    |    +--- org.apache.camel:camel-spring:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-main:3.19.0
+|    |    |         +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-base:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-management-api:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |         \--- org.apache.camel:camel-core-languages:3.19.0
+|    |    |              +--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    |              +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |              \--- org.slf4j:slf4j-api:1.7.36
+|    |    +--- org.apache.camel:camel-util-json:3.19.0
+|    |    +--- org.apache.camel:camel-xml-jaxb-dsl:3.19.0
+|    |    |    +--- org.apache.camel:camel-xml-jaxb:3.19.0
+|    |    |    |    +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3 (*)
+|    |    |    |    +--- com.sun.xml.bind:jaxb-core:2.3.0
+|    |    |    |    +--- com.sun.xml.bind:jaxb-impl:2.3.3
+|    |    |    |    |    +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3 (*)
+|    |    |    |    |    \--- com.sun.activation:jakarta.activation:1.2.2
+|    |    |    |    +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    |    |    \--- org.apache.camel:camel-xml-jaxp:3.19.0
+|    |    |    |         +--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    |    |         +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |         \--- org.apache.camel:camel-xml-io-util:3.19.0
+|    |    |    |              \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    \--- org.apache.camel:camel-dsl-support:3.19.0
+|    |    |         +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |         \--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    +--- org.apache.camel:camel-spring-xml:3.19.0
+|    |    |    +--- org.apache.camel:camel-spring:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-xml-jaxb:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-core-xml:3.19.0
+|    |    |    |    \--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    |    \--- javax.annotation:javax.annotation-api:1.3.2
+|    |    +--- org.apache.camel:camel-cloud:3.19.0
+|    |    |    \--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    +--- org.apache.camel:camel-cluster:3.19.0
+|    |    |    +--- org.apache.camel:camel-base-engine:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    \--- org.apache.camel:camel-health:3.19.0
+|    |         +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |         \--- org.slf4j:slf4j-api:1.7.36
+|    +--- org.apache.camel.springboot:camel-core-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-spring-boot:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-bean-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-bean:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-browse-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-browse:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-controlbus-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-controlbus:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-dataformat-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-dataformat:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-dataset-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-dataset:3.19.0
+|    |    |    \--- org.apache.camel:camel-mock:3.19.0
+|    |    |         \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-direct-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-direct:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-directvm-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-directvm:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-file-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-file:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-cluster:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-language-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-language:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-log-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-log:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-mock-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-mock:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-ref-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-ref:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-rest-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-rest:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-tooling-model:3.19.0
+|    |    |         \--- org.apache.camel:camel-util-json:3.19.0
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-saga-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-saga:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-scheduler-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-scheduler:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-seda-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-seda:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-stub-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-stub:3.19.0
+|    |    |    \--- org.apache.camel:camel-vm:3.19.0
+|    |    |         \--- org.apache.camel:camel-seda:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-timer-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-timer:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-validator-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-validator:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-vm-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-vm:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-xpath-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-xpath:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-xslt-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-xslt:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    \--- org.apache.camel.springboot:camel-xml-jaxp-starter:3.19.0
+|         +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|         +--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|         \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
++--- io.camunda:zeebe-client-java:8.1.4
+|    +--- io.camunda:zeebe-bpmn-model:8.1.4
+|    |    +--- org.camunda.bpm.model:camunda-xml-model:7.17.0
+|    |    \--- org.slf4j:slf4j-api:1.7.36
+|    +--- com.fasterxml.jackson.core:jackson-core:2.14.0 -> 2.13.4 (*)
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.14.0 -> 2.13.4.2 (*)
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.14.0 -> 2.13.4 (*)
+|    +--- io.camunda:zeebe-gateway-protocol-impl:8.1.4
+|    |    +--- io.grpc:grpc-api:1.49.1
+|    |    |    +--- io.grpc:grpc-context:1.49.1
+|    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    +--- com.google.errorprone:error_prone_annotations:2.14.0
+|    |    |    \--- com.google.guava:guava:31.1-android -> 31.1-jre
+|    |    |         +--- com.google.guava:failureaccess:1.0.1
+|    |    |         +--- com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava
+|    |    |         +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |         +--- org.checkerframework:checker-qual:3.12.0
+|    |    |         +--- com.google.errorprone:error_prone_annotations:2.11.0 -> 2.14.0
+|    |    |         \--- com.google.j2objc:j2objc-annotations:1.3
+|    |    +--- io.grpc:grpc-protobuf:1.49.1
+|    |    |    +--- io.grpc:grpc-api:1.49.1 (*)
+|    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    +--- com.google.protobuf:protobuf-java:3.21.1 -> 3.21.9
+|    |    |    +--- com.google.api.grpc:proto-google-common-protos:2.9.0
+|    |    |    |    \--- com.google.protobuf:protobuf-java:3.21.1 -> 3.21.9
+|    |    |    +--- io.grpc:grpc-protobuf-lite:1.49.1
+|    |    |    |    +--- io.grpc:grpc-api:1.49.1 (*)
+|    |    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    |    \--- com.google.guava:guava:31.1-android -> 31.1-jre (*)
+|    |    |    \--- com.google.guava:guava:31.1-android -> 31.1-jre (*)
+|    |    +--- io.grpc:grpc-stub:1.49.1
+|    |    |    +--- io.grpc:grpc-api:1.49.1 (*)
+|    |    |    +--- com.google.guava:guava:31.1-android -> 31.1-jre (*)
+|    |    |    \--- com.google.errorprone:error_prone_annotations:2.14.0
+|    |    +--- com.google.guava:guava:31.1-jre (*)
+|    |    \--- com.google.protobuf:protobuf-java:3.21.9
+|    +--- org.slf4j:slf4j-api:1.7.36
+|    +--- io.grpc:grpc-stub:1.49.1 (*)
+|    +--- io.grpc:grpc-core:1.49.1
+|    |    +--- io.grpc:grpc-api:1.49.1 (*)
+|    |    +--- com.google.code.gson:gson:2.9.0 -> 2.10.1
+|    |    +--- com.google.android:annotations:4.1.1.4
+|    |    +--- org.codehaus.mojo:animal-sniffer-annotations:1.21
+|    |    +--- com.google.errorprone:error_prone_annotations:2.14.0
+|    |    +--- com.google.guava:guava:31.1-android -> 31.1-jre (*)
+|    |    \--- io.perfmark:perfmark-api:0.25.0
+|    +--- io.grpc:grpc-api:1.49.1 (*)
+|    +--- io.grpc:grpc-netty:1.49.1
+|    |    +--- io.grpc:grpc-core:1.49.1 (*)
+|    |    +--- io.netty:netty-codec-http2:4.1.77.Final -> 4.1.85.Final
+|    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.85.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.85.Final
+|    |    |    +--- io.netty:netty-transport:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |    |    \--- io.netty:netty-resolver:4.1.85.Final
+|    |    |    |         \--- io.netty:netty-common:4.1.85.Final
+|    |    |    +--- io.netty:netty-codec:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |    |    \--- io.netty:netty-transport:4.1.85.Final (*)
+|    |    |    +--- io.netty:netty-handler:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-resolver:4.1.85.Final (*)
+|    |    |    |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |    |    +--- io.netty:netty-transport:4.1.85.Final (*)
+|    |    |    |    +--- io.netty:netty-transport-native-unix-common:4.1.85.Final
+|    |    |    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    |    |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |    |    |    \--- io.netty:netty-transport:4.1.85.Final (*)
+|    |    |    |    \--- io.netty:netty-codec:4.1.85.Final (*)
+|    |    |    \--- io.netty:netty-codec-http:4.1.85.Final
+|    |    |         +--- io.netty:netty-common:4.1.85.Final
+|    |    |         +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |         +--- io.netty:netty-transport:4.1.85.Final (*)
+|    |    |         +--- io.netty:netty-codec:4.1.85.Final (*)
+|    |    |         \--- io.netty:netty-handler:4.1.85.Final (*)
+|    |    +--- io.netty:netty-handler-proxy:4.1.77.Final -> 4.1.85.Final
+|    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.85.Final (*)
+|    |    |    +--- io.netty:netty-codec:4.1.85.Final (*)
+|    |    |    +--- io.netty:netty-codec-socks:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |    |    +--- io.netty:netty-transport:4.1.85.Final (*)
+|    |    |    |    \--- io.netty:netty-codec:4.1.85.Final (*)
+|    |    |    \--- io.netty:netty-codec-http:4.1.85.Final (*)
+|    |    +--- com.google.guava:guava:31.1-android -> 31.1-jre (*)
+|    |    +--- com.google.errorprone:error_prone_annotations:2.14.0
+|    |    +--- io.perfmark:perfmark-api:0.25.0
+|    |    \--- io.netty:netty-transport-native-unix-common:4.1.77.Final -> 4.1.85.Final (*)
+|    +--- com.google.protobuf:protobuf-java:3.21.9
+|    +--- io.netty:netty-tcnative-boringssl-static:2.0.54.Final
+|    |    \--- io.netty:netty-tcnative-classes:2.0.54.Final
+|    +--- io.netty:netty-handler:4.1.82.Final -> 4.1.85.Final (*)
+|    +--- io.netty:netty-common:4.1.82.Final -> 4.1.85.Final
+|    \--- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.0 -> 2.13.4
+|         +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
+|         +--- org.yaml:snakeyaml:1.31 -> 1.30
+|         +--- com.fasterxml.jackson.core:jackson-core:2.13.4 (*)
+|         \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
++--- org.apache.camel.springboot:camel-jackson-starter:3.19.0
+|    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    +--- org.apache.camel:camel-jackson:3.19.0
+|    |    +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    \--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
+|    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
++--- org.apache.camel:camel-endpointdsl:3.19.0
+|    +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    \--- org.slf4j:slf4j-api:1.7.36
++--- org.apache.camel:camel-undertow:3.19.0
+|    +--- org.apache.camel:camel-base:3.19.0 (*)
+|    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    +--- org.apache.camel:camel-cloud:3.19.0 (*)
+|    +--- org.apache.camel:camel-attachments:3.19.0
+|    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- com.sun.activation:javax.activation:1.2.0
+|    +--- org.apache.camel:camel-http-base:3.19.0
+|    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    +--- io.undertow:undertow-core:2.2.19.Final -> 2.2.20.Final
+|    |    +--- org.jboss.logging:jboss-logging:3.4.1.Final -> 3.4.3.Final
+|    |    +--- org.jboss.xnio:xnio-api:3.8.7.Final
+|    |    |    +--- org.wildfly.common:wildfly-common:1.5.4.Final
+|    |    |    +--- org.wildfly.client:wildfly-client-config:1.0.1.Final
+|    |    |    |    \--- org.jboss.logging:jboss-logging:3.3.1.Final -> 3.4.3.Final
+|    |    |    \--- org.jboss.threads:jboss-threads:2.3.6.Final -> 3.1.0.Final
+|    |    |         +--- org.jboss.logging:jboss-logging:3.4.1.Final -> 3.4.3.Final
+|    |    |         \--- org.wildfly.common:wildfly-common:1.5.0.Final -> 1.5.4.Final
+|    |    +--- org.jboss.xnio:xnio-nio:3.8.7.Final
+|    |    |    \--- org.jboss.xnio:xnio-api:3.8.7.Final (*)
+|    |    \--- org.jboss.threads:jboss-threads:3.1.0.Final (*)
+|    \--- io.undertow:undertow-servlet:2.2.19.Final -> 2.2.20.Final
+|         +--- io.undertow:undertow-core:2.2.20.Final (*)
+|         +--- org.jboss.spec.javax.servlet:jboss-servlet-api_4.0_spec:2.0.0.Final
+|         \--- org.jboss.spec.javax.annotation:jboss-annotations-api_1.3_spec:2.0.1.Final
++--- org.apache.camel:camel-http:3.19.0
+|    +--- org.apache.camel:camel-cloud:3.19.0 (*)
+|    +--- org.apache.camel:camel-http-common:3.19.0
+|    |    +--- org.apache.camel:camel-http-base:3.19.0 (*)
+|    |    +--- org.apache.camel:camel-cloud:3.19.0 (*)
+|    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel:camel-attachments:3.19.0 (*)
+|    +--- org.apache.camel:camel-file:3.19.0 (*)
+|    +--- javax.servlet:javax.servlet-api:3.1.0 -> 4.0.1
+|    \--- org.apache.httpcomponents:httpclient:4.5.13
+|         +--- org.apache.httpcomponents:httpcore:4.4.13 -> 4.4.15
+|         \--- commons-codec:commons-codec:1.11 -> 1.15
++--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.0 (*)
++--- org.json:json:20220924
+\--- com.google.code.gson:gson:2.10.1
+
+runtimeClasspath - Runtime classpath of source set 'main'.
++--- org.springframework.boot:spring-boot-starter -> 2.7.6
+|    +--- org.springframework.boot:spring-boot:2.7.6
+|    |    +--- org.springframework:spring-core:5.3.24
+|    |    |    \--- org.springframework:spring-jcl:5.3.24
+|    |    \--- org.springframework:spring-context:5.3.24
+|    |         +--- org.springframework:spring-aop:5.3.24
+|    |         |    +--- org.springframework:spring-beans:5.3.24
+|    |         |    |    \--- org.springframework:spring-core:5.3.24 (*)
+|    |         |    \--- org.springframework:spring-core:5.3.24 (*)
+|    |         +--- org.springframework:spring-beans:5.3.24 (*)
+|    |         +--- org.springframework:spring-core:5.3.24 (*)
+|    |         \--- org.springframework:spring-expression:5.3.24
+|    |              \--- org.springframework:spring-core:5.3.24 (*)
+|    +--- org.springframework.boot:spring-boot-autoconfigure:2.7.6
+|    |    \--- org.springframework.boot:spring-boot:2.7.6 (*)
+|    +--- org.springframework.boot:spring-boot-starter-logging:2.7.6
+|    |    +--- ch.qos.logback:logback-classic:1.2.11
+|    |    |    +--- ch.qos.logback:logback-core:1.2.11
+|    |    |    \--- org.slf4j:slf4j-api:1.7.32 -> 1.7.36
+|    |    +--- org.apache.logging.log4j:log4j-to-slf4j:2.17.2
+|    |    |    +--- org.slf4j:slf4j-api:1.7.35 -> 1.7.36
+|    |    |    \--- org.apache.logging.log4j:log4j-api:2.17.2
+|    |    \--- org.slf4j:jul-to-slf4j:1.7.36
+|    |         \--- org.slf4j:slf4j-api:1.7.36
+|    +--- jakarta.annotation:jakarta.annotation-api:1.3.5
+|    +--- org.springframework:spring-core:5.3.24 (*)
+|    \--- org.yaml:snakeyaml:1.30
++--- org.mifos:ph-ee-connector-common:1.5.1-SNAPSHOT FAILED
++--- org.springframework.boot:spring-boot-starter-web -> 2.7.6
+|    +--- org.springframework.boot:spring-boot-starter:2.7.6 (*)
+|    +--- org.springframework.boot:spring-boot-starter-json:2.7.6
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.6 (*)
+|    |    +--- org.springframework:spring-web:5.3.24
+|    |    |    +--- org.springframework:spring-beans:5.3.24 (*)
+|    |    |    \--- org.springframework:spring-core:5.3.24 (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.4
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.14.0 -> 2.13.4 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.14.0 -> 2.13.4 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-databind:2.14.0 -> 2.13.4.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.0 -> 2.13.4 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.14.0 -> 2.13.4 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.0 (c)
+|    |    |    |         \--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.0 -> 2.13.4 (c)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.13.4
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
+|    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.4
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.13.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
+|    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.4 -> 2.14.0
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.14.0 -> 2.13.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.14.0 -> 2.13.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.14.0 -> 2.13.4.2 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.14.0 (*)
+|    |    \--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.4
+|    |         +--- com.fasterxml.jackson.core:jackson-core:2.13.4 (*)
+|    |         +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
+|    |         \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
+|    +--- org.springframework.boot:spring-boot-starter-tomcat:2.7.6
+|    |    +--- jakarta.annotation:jakarta.annotation-api:1.3.5
+|    |    +--- org.apache.tomcat.embed:tomcat-embed-core:9.0.69
+|    |    +--- org.apache.tomcat.embed:tomcat-embed-el:9.0.69
+|    |    \--- org.apache.tomcat.embed:tomcat-embed-websocket:9.0.69
+|    |         \--- org.apache.tomcat.embed:tomcat-embed-core:9.0.69
+|    +--- org.springframework:spring-web:5.3.24 (*)
+|    \--- org.springframework:spring-webmvc:5.3.24
+|         +--- org.springframework:spring-aop:5.3.24 (*)
+|         +--- org.springframework:spring-beans:5.3.24 (*)
+|         +--- org.springframework:spring-context:5.3.24 (*)
+|         +--- org.springframework:spring-core:5.3.24 (*)
+|         +--- org.springframework:spring-expression:5.3.24 (*)
+|         \--- org.springframework:spring-web:5.3.24 (*)
++--- org.springframework.boot:spring-boot-starter-actuator -> 2.7.6
+|    +--- org.springframework.boot:spring-boot-starter:2.7.6 (*)
+|    +--- org.springframework.boot:spring-boot-actuator-autoconfigure:2.7.6
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4.2 (*)
+|    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.4 -> 2.14.0 (*)
+|    |    +--- org.springframework.boot:spring-boot-actuator:2.7.6
+|    |    |    \--- org.springframework.boot:spring-boot:2.7.6 (*)
+|    |    +--- org.springframework.boot:spring-boot:2.7.6 (*)
+|    |    \--- org.springframework.boot:spring-boot-autoconfigure:2.7.6 (*)
+|    \--- io.micrometer:micrometer-core:1.9.6
+|         +--- org.hdrhistogram:HdrHistogram:2.1.12
+|         \--- org.latencyutils:LatencyUtils:2.0.3
++--- org.apache.camel.springboot:camel-spring-boot-starter:3.19.0
+|    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    +--- org.apache.camel.springboot:camel-spring-boot:3.19.0
+|    |    +--- org.apache.camel:camel-spring:3.19.0
+|    |    |    +--- org.apache.camel:camel-core-engine:3.19.0
+|    |    |    |    +--- org.apache.camel:camel-api:3.19.0
+|    |    |    |    |    +--- org.apache.camel:camel-util:3.19.0
+|    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    +--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    \--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3
+|    |    |    |    |         \--- jakarta.activation:jakarta.activation-api:1.2.2
+|    |    |    |    +--- org.apache.camel:camel-base-engine:3.19.0
+|    |    |    |    |    +--- org.apache.camel:camel-base:3.19.0
+|    |    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    |    +--- org.apache.camel:camel-management-api:3.19.0
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    |    +--- org.apache.camel:camel-support:3.19.0
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-management-api:3.19.0 (*)
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    |    +--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    +--- org.apache.camel:camel-core-reifier:3.19.0
+|    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |    |    +--- org.apache.camel:camel-core-model:3.19.0
+|    |    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    |    +--- org.apache.camel:camel-core-processor:3.19.0
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |    |    |    |    \--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |    |    |    \--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    +--- org.apache.camel:camel-core-processor:3.19.0 (*)
+|    |    |    |    |    \--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    +--- org.apache.camel:camel-management-api:3.19.0 (*)
+|    |    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |    \--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-management-api:3.19.0 (*)
+|    |    |    +--- org.springframework:spring-core:5.3.23 -> 5.3.24 (*)
+|    |    |    +--- org.springframework:spring-aop:5.3.23 -> 5.3.24 (*)
+|    |    |    +--- org.springframework:spring-context:5.3.23 -> 5.3.24 (*)
+|    |    |    +--- org.springframework:spring-beans:5.3.23 -> 5.3.24 (*)
+|    |    |    +--- org.springframework:spring-expression:5.3.23 -> 5.3.24 (*)
+|    |    |    \--- org.springframework:spring-tx:5.3.23 -> 5.3.24
+|    |    |         +--- org.springframework:spring-beans:5.3.24 (*)
+|    |    |         \--- org.springframework:spring-core:5.3.24 (*)
+|    |    +--- org.apache.camel:camel-spring-main:3.19.0
+|    |    |    +--- org.apache.camel:camel-spring:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-main:3.19.0
+|    |    |         +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-base:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-management-api:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |         \--- org.apache.camel:camel-core-languages:3.19.0
+|    |    |              +--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    |              +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |              \--- org.slf4j:slf4j-api:1.7.36
+|    |    +--- org.apache.camel:camel-util-json:3.19.0
+|    |    +--- org.apache.camel:camel-xml-jaxb-dsl:3.19.0
+|    |    |    +--- org.apache.camel:camel-xml-jaxb:3.19.0
+|    |    |    |    +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3 (*)
+|    |    |    |    +--- com.sun.xml.bind:jaxb-core:2.3.0
+|    |    |    |    +--- com.sun.xml.bind:jaxb-impl:2.3.3
+|    |    |    |    |    +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3 (*)
+|    |    |    |    |    \--- com.sun.activation:jakarta.activation:1.2.2
+|    |    |    |    +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    |    |    \--- org.apache.camel:camel-xml-jaxp:3.19.0
+|    |    |    |         +--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    |    |         +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |         \--- org.apache.camel:camel-xml-io-util:3.19.0
+|    |    |    |              \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    \--- org.apache.camel:camel-dsl-support:3.19.0
+|    |    |         +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |         \--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    +--- org.apache.camel:camel-spring-xml:3.19.0
+|    |    |    +--- org.apache.camel:camel-spring:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-xml-jaxb:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-core-xml:3.19.0
+|    |    |    |    \--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    |    \--- javax.annotation:javax.annotation-api:1.3.2
+|    |    +--- org.apache.camel:camel-cloud:3.19.0
+|    |    |    \--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    +--- org.apache.camel:camel-cluster:3.19.0
+|    |    |    +--- org.apache.camel:camel-base-engine:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    \--- org.apache.camel:camel-health:3.19.0
+|    |         +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |         \--- org.slf4j:slf4j-api:1.7.36
+|    +--- org.apache.camel.springboot:camel-core-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-spring-boot:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-bean-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-bean:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-browse-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-browse:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-controlbus-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-controlbus:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-dataformat-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-dataformat:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-dataset-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-dataset:3.19.0
+|    |    |    \--- org.apache.camel:camel-mock:3.19.0
+|    |    |         \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-direct-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-direct:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-directvm-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-directvm:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-file-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-file:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-cluster:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-language-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-language:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-log-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-log:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-mock-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-mock:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-ref-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-ref:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-rest-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-rest:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-tooling-model:3.19.0
+|    |    |         \--- org.apache.camel:camel-util-json:3.19.0
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-saga-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-saga:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-scheduler-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-scheduler:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-seda-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-seda:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-stub-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-stub:3.19.0
+|    |    |    \--- org.apache.camel:camel-vm:3.19.0
+|    |    |         \--- org.apache.camel:camel-seda:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-timer-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-timer:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-validator-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-validator:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-vm-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-vm:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-xpath-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-xpath:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-xslt-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-xslt:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    \--- org.apache.camel.springboot:camel-xml-jaxp-starter:3.19.0
+|         +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|         +--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|         \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
++--- io.camunda:zeebe-client-java:8.1.4
+|    +--- io.camunda:zeebe-bpmn-model:8.1.4
+|    |    +--- org.camunda.bpm.model:camunda-xml-model:7.17.0
+|    |    \--- org.slf4j:slf4j-api:1.7.36
+|    +--- com.fasterxml.jackson.core:jackson-core:2.14.0 -> 2.13.4 (*)
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.14.0 -> 2.13.4.2 (*)
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.14.0 -> 2.13.4 (*)
+|    +--- io.camunda:zeebe-gateway-protocol-impl:8.1.4
+|    |    +--- io.grpc:grpc-api:1.49.1
+|    |    |    +--- io.grpc:grpc-context:1.49.1
+|    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    +--- com.google.errorprone:error_prone_annotations:2.14.0
+|    |    |    \--- com.google.guava:guava:31.1-android -> 31.1-jre
+|    |    |         +--- com.google.guava:failureaccess:1.0.1
+|    |    |         +--- com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava
+|    |    |         +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |         +--- org.checkerframework:checker-qual:3.12.0
+|    |    |         +--- com.google.errorprone:error_prone_annotations:2.11.0 -> 2.14.0
+|    |    |         \--- com.google.j2objc:j2objc-annotations:1.3
+|    |    +--- io.grpc:grpc-protobuf:1.49.1
+|    |    |    +--- io.grpc:grpc-api:1.49.1 (*)
+|    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    +--- com.google.protobuf:protobuf-java:3.21.1 -> 3.21.9
+|    |    |    +--- com.google.api.grpc:proto-google-common-protos:2.9.0
+|    |    |    |    \--- com.google.protobuf:protobuf-java:3.21.1 -> 3.21.9
+|    |    |    +--- io.grpc:grpc-protobuf-lite:1.49.1
+|    |    |    |    +--- io.grpc:grpc-api:1.49.1 (*)
+|    |    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    |    \--- com.google.guava:guava:31.1-android -> 31.1-jre (*)
+|    |    |    \--- com.google.guava:guava:31.1-android -> 31.1-jre (*)
+|    |    +--- io.grpc:grpc-stub:1.49.1
+|    |    |    +--- io.grpc:grpc-api:1.49.1 (*)
+|    |    |    +--- com.google.guava:guava:31.1-android -> 31.1-jre (*)
+|    |    |    \--- com.google.errorprone:error_prone_annotations:2.14.0
+|    |    +--- com.google.guava:guava:31.1-jre (*)
+|    |    \--- com.google.protobuf:protobuf-java:3.21.9
+|    +--- org.slf4j:slf4j-api:1.7.36
+|    +--- io.grpc:grpc-stub:1.49.1 (*)
+|    +--- io.grpc:grpc-core:1.49.1
+|    |    +--- io.grpc:grpc-api:1.49.1 (*)
+|    |    +--- com.google.code.gson:gson:2.9.0 -> 2.10.1
+|    |    +--- com.google.android:annotations:4.1.1.4
+|    |    +--- org.codehaus.mojo:animal-sniffer-annotations:1.21
+|    |    +--- com.google.errorprone:error_prone_annotations:2.14.0
+|    |    +--- com.google.guava:guava:31.1-android -> 31.1-jre (*)
+|    |    \--- io.perfmark:perfmark-api:0.25.0
+|    +--- io.grpc:grpc-api:1.49.1 (*)
+|    +--- io.grpc:grpc-netty:1.49.1
+|    |    +--- io.grpc:grpc-core:1.49.1 (*)
+|    |    +--- io.netty:netty-codec-http2:4.1.77.Final -> 4.1.85.Final
+|    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.85.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.85.Final
+|    |    |    +--- io.netty:netty-transport:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |    |    \--- io.netty:netty-resolver:4.1.85.Final
+|    |    |    |         \--- io.netty:netty-common:4.1.85.Final
+|    |    |    +--- io.netty:netty-codec:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |    |    \--- io.netty:netty-transport:4.1.85.Final (*)
+|    |    |    +--- io.netty:netty-handler:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-resolver:4.1.85.Final (*)
+|    |    |    |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |    |    +--- io.netty:netty-transport:4.1.85.Final (*)
+|    |    |    |    +--- io.netty:netty-transport-native-unix-common:4.1.85.Final
+|    |    |    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    |    |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |    |    |    \--- io.netty:netty-transport:4.1.85.Final (*)
+|    |    |    |    \--- io.netty:netty-codec:4.1.85.Final (*)
+|    |    |    \--- io.netty:netty-codec-http:4.1.85.Final
+|    |    |         +--- io.netty:netty-common:4.1.85.Final
+|    |    |         +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |         +--- io.netty:netty-transport:4.1.85.Final (*)
+|    |    |         +--- io.netty:netty-codec:4.1.85.Final (*)
+|    |    |         \--- io.netty:netty-handler:4.1.85.Final (*)
+|    |    +--- io.netty:netty-handler-proxy:4.1.77.Final -> 4.1.85.Final
+|    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.85.Final (*)
+|    |    |    +--- io.netty:netty-codec:4.1.85.Final (*)
+|    |    |    +--- io.netty:netty-codec-socks:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |    |    +--- io.netty:netty-transport:4.1.85.Final (*)
+|    |    |    |    \--- io.netty:netty-codec:4.1.85.Final (*)
+|    |    |    \--- io.netty:netty-codec-http:4.1.85.Final (*)
+|    |    +--- com.google.guava:guava:31.1-android -> 31.1-jre (*)
+|    |    +--- com.google.errorprone:error_prone_annotations:2.14.0
+|    |    +--- io.perfmark:perfmark-api:0.25.0
+|    |    \--- io.netty:netty-transport-native-unix-common:4.1.77.Final -> 4.1.85.Final (*)
+|    +--- com.google.protobuf:protobuf-java:3.21.9
+|    +--- io.netty:netty-tcnative-boringssl-static:2.0.54.Final
+|    |    \--- io.netty:netty-tcnative-classes:2.0.54.Final
+|    +--- io.netty:netty-handler:4.1.82.Final -> 4.1.85.Final (*)
+|    +--- io.netty:netty-common:4.1.82.Final -> 4.1.85.Final
+|    \--- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.0 -> 2.13.4
+|         +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
+|         +--- org.yaml:snakeyaml:1.31 -> 1.30
+|         +--- com.fasterxml.jackson.core:jackson-core:2.13.4 (*)
+|         \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
++--- org.apache.camel.springboot:camel-jackson-starter:3.19.0
+|    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    +--- org.apache.camel:camel-jackson:3.19.0
+|    |    +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    \--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
+|    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
++--- org.apache.camel:camel-endpointdsl:3.19.0
+|    +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    \--- org.slf4j:slf4j-api:1.7.36
++--- org.apache.camel:camel-undertow:3.19.0
+|    +--- org.apache.camel:camel-base:3.19.0 (*)
+|    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    +--- org.apache.camel:camel-cloud:3.19.0 (*)
+|    +--- org.apache.camel:camel-attachments:3.19.0
+|    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- com.sun.activation:javax.activation:1.2.0
+|    +--- org.apache.camel:camel-http-base:3.19.0
+|    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    +--- io.undertow:undertow-core:2.2.19.Final -> 2.2.20.Final
+|    |    +--- org.jboss.logging:jboss-logging:3.4.1.Final -> 3.4.3.Final
+|    |    +--- org.jboss.xnio:xnio-api:3.8.7.Final
+|    |    |    +--- org.wildfly.common:wildfly-common:1.5.4.Final
+|    |    |    +--- org.wildfly.client:wildfly-client-config:1.0.1.Final
+|    |    |    |    \--- org.jboss.logging:jboss-logging:3.3.1.Final -> 3.4.3.Final
+|    |    |    \--- org.jboss.threads:jboss-threads:2.3.6.Final -> 3.1.0.Final
+|    |    |         +--- org.jboss.logging:jboss-logging:3.4.1.Final -> 3.4.3.Final
+|    |    |         \--- org.wildfly.common:wildfly-common:1.5.0.Final -> 1.5.4.Final
+|    |    +--- org.jboss.xnio:xnio-nio:3.8.7.Final
+|    |    |    \--- org.jboss.xnio:xnio-api:3.8.7.Final (*)
+|    |    \--- org.jboss.threads:jboss-threads:3.1.0.Final (*)
+|    \--- io.undertow:undertow-servlet:2.2.19.Final -> 2.2.20.Final
+|         +--- io.undertow:undertow-core:2.2.20.Final (*)
+|         +--- org.jboss.spec.javax.servlet:jboss-servlet-api_4.0_spec:2.0.0.Final
+|         \--- org.jboss.spec.javax.annotation:jboss-annotations-api_1.3_spec:2.0.1.Final
++--- org.apache.camel:camel-http:3.19.0
+|    +--- org.apache.camel:camel-cloud:3.19.0 (*)
+|    +--- org.apache.camel:camel-http-common:3.19.0
+|    |    +--- org.apache.camel:camel-http-base:3.19.0 (*)
+|    |    +--- org.apache.camel:camel-cloud:3.19.0 (*)
+|    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel:camel-attachments:3.19.0 (*)
+|    +--- org.apache.camel:camel-file:3.19.0 (*)
+|    +--- javax.servlet:javax.servlet-api:3.1.0 -> 4.0.1
+|    \--- org.apache.httpcomponents:httpclient:4.5.13
+|         +--- org.apache.httpcomponents:httpcore:4.4.13 -> 4.4.15
+|         \--- commons-codec:commons-codec:1.11 -> 1.15
++--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.0 (*)
++--- org.json:json:20220924
+\--- com.google.code.gson:gson:2.10.1
+
+runtimeElements - Elements of runtime for main. (n)
+No dependencies
+
+runtimeOnly - Runtime only dependencies for source set 'main'. (n)
+No dependencies
+
+testAnnotationProcessor - Annotation processors and their dependencies for source set 'test'.
+No dependencies
+
+testCompileClasspath - Compile classpath for source set 'test'.
++--- org.springframework.boot:spring-boot-starter -> 2.7.6
+|    +--- org.springframework.boot:spring-boot:2.7.6
+|    |    +--- org.springframework:spring-core:5.3.24
+|    |    |    \--- org.springframework:spring-jcl:5.3.24
+|    |    \--- org.springframework:spring-context:5.3.24
+|    |         +--- org.springframework:spring-aop:5.3.24
+|    |         |    +--- org.springframework:spring-beans:5.3.24
+|    |         |    |    \--- org.springframework:spring-core:5.3.24 (*)
+|    |         |    \--- org.springframework:spring-core:5.3.24 (*)
+|    |         +--- org.springframework:spring-beans:5.3.24 (*)
+|    |         +--- org.springframework:spring-core:5.3.24 (*)
+|    |         \--- org.springframework:spring-expression:5.3.24
+|    |              \--- org.springframework:spring-core:5.3.24 (*)
+|    +--- org.springframework.boot:spring-boot-autoconfigure:2.7.6
+|    |    \--- org.springframework.boot:spring-boot:2.7.6 (*)
+|    +--- org.springframework.boot:spring-boot-starter-logging:2.7.6
+|    |    +--- ch.qos.logback:logback-classic:1.2.11
+|    |    |    +--- ch.qos.logback:logback-core:1.2.11
+|    |    |    \--- org.slf4j:slf4j-api:1.7.32 -> 1.7.36
+|    |    +--- org.apache.logging.log4j:log4j-to-slf4j:2.17.2
+|    |    |    +--- org.slf4j:slf4j-api:1.7.35 -> 1.7.36
+|    |    |    \--- org.apache.logging.log4j:log4j-api:2.17.2
+|    |    \--- org.slf4j:jul-to-slf4j:1.7.36
+|    |         \--- org.slf4j:slf4j-api:1.7.36
+|    +--- jakarta.annotation:jakarta.annotation-api:1.3.5
+|    +--- org.springframework:spring-core:5.3.24 (*)
+|    \--- org.yaml:snakeyaml:1.30
++--- org.mifos:ph-ee-connector-common:1.5.1-SNAPSHOT FAILED
++--- org.springframework.boot:spring-boot-starter-web -> 2.7.6
+|    +--- org.springframework.boot:spring-boot-starter:2.7.6 (*)
+|    +--- org.springframework.boot:spring-boot-starter-json:2.7.6
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.6 (*)
+|    |    +--- org.springframework:spring-web:5.3.24
+|    |    |    +--- org.springframework:spring-beans:5.3.24 (*)
+|    |    |    \--- org.springframework:spring-core:5.3.24 (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.4
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.14.0 -> 2.13.4 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.14.0 -> 2.13.4 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-databind:2.14.0 -> 2.13.4.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.0 -> 2.13.4 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.14.0 -> 2.13.4 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.0 (c)
+|    |    |    |         \--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.0 -> 2.13.4 (c)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.13.4
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
+|    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.4
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.13.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
+|    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.4 -> 2.14.0
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.14.0 -> 2.13.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.14.0 -> 2.13.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.14.0 -> 2.13.4.2 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.14.0 (*)
+|    |    \--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.4
+|    |         +--- com.fasterxml.jackson.core:jackson-core:2.13.4 (*)
+|    |         +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
+|    |         \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
+|    +--- org.springframework.boot:spring-boot-starter-tomcat:2.7.6
+|    |    +--- jakarta.annotation:jakarta.annotation-api:1.3.5
+|    |    +--- org.apache.tomcat.embed:tomcat-embed-core:9.0.69
+|    |    +--- org.apache.tomcat.embed:tomcat-embed-el:9.0.69
+|    |    \--- org.apache.tomcat.embed:tomcat-embed-websocket:9.0.69
+|    |         \--- org.apache.tomcat.embed:tomcat-embed-core:9.0.69
+|    +--- org.springframework:spring-web:5.3.24 (*)
+|    \--- org.springframework:spring-webmvc:5.3.24
+|         +--- org.springframework:spring-aop:5.3.24 (*)
+|         +--- org.springframework:spring-beans:5.3.24 (*)
+|         +--- org.springframework:spring-context:5.3.24 (*)
+|         +--- org.springframework:spring-core:5.3.24 (*)
+|         +--- org.springframework:spring-expression:5.3.24 (*)
+|         \--- org.springframework:spring-web:5.3.24 (*)
++--- org.springframework.boot:spring-boot-starter-actuator -> 2.7.6
+|    +--- org.springframework.boot:spring-boot-starter:2.7.6 (*)
+|    +--- org.springframework.boot:spring-boot-actuator-autoconfigure:2.7.6
+|    |    +--- org.springframework.boot:spring-boot-actuator:2.7.6
+|    |    |    \--- org.springframework.boot:spring-boot:2.7.6 (*)
+|    |    +--- org.springframework.boot:spring-boot:2.7.6 (*)
+|    |    \--- org.springframework.boot:spring-boot-autoconfigure:2.7.6 (*)
+|    \--- io.micrometer:micrometer-core:1.9.6
+|         \--- org.hdrhistogram:HdrHistogram:2.1.12
++--- org.apache.camel.springboot:camel-spring-boot-starter:3.19.0
+|    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    +--- org.apache.camel.springboot:camel-spring-boot:3.19.0
+|    |    +--- org.apache.camel:camel-spring:3.19.0
+|    |    |    +--- org.apache.camel:camel-core-engine:3.19.0
+|    |    |    |    +--- org.apache.camel:camel-api:3.19.0
+|    |    |    |    |    +--- org.apache.camel:camel-util:3.19.0
+|    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    +--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    \--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3
+|    |    |    |    |         \--- jakarta.activation:jakarta.activation-api:1.2.2
+|    |    |    |    +--- org.apache.camel:camel-base-engine:3.19.0
+|    |    |    |    |    +--- org.apache.camel:camel-base:3.19.0
+|    |    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    |    +--- org.apache.camel:camel-management-api:3.19.0
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    |    +--- org.apache.camel:camel-support:3.19.0
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-management-api:3.19.0 (*)
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    |    +--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    +--- org.apache.camel:camel-core-reifier:3.19.0
+|    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |    |    +--- org.apache.camel:camel-core-model:3.19.0
+|    |    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    |    +--- org.apache.camel:camel-core-processor:3.19.0
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |    |    |    |    \--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |    |    |    \--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    +--- org.apache.camel:camel-core-processor:3.19.0 (*)
+|    |    |    |    |    \--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    +--- org.apache.camel:camel-management-api:3.19.0 (*)
+|    |    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |    \--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-management-api:3.19.0 (*)
+|    |    |    +--- org.springframework:spring-core:5.3.23 -> 5.3.24 (*)
+|    |    |    +--- org.springframework:spring-aop:5.3.23 -> 5.3.24 (*)
+|    |    |    +--- org.springframework:spring-context:5.3.23 -> 5.3.24 (*)
+|    |    |    +--- org.springframework:spring-beans:5.3.23 -> 5.3.24 (*)
+|    |    |    +--- org.springframework:spring-expression:5.3.23 -> 5.3.24 (*)
+|    |    |    \--- org.springframework:spring-tx:5.3.23 -> 5.3.24
+|    |    |         +--- org.springframework:spring-beans:5.3.24 (*)
+|    |    |         \--- org.springframework:spring-core:5.3.24 (*)
+|    |    +--- org.apache.camel:camel-spring-main:3.19.0
+|    |    |    +--- org.apache.camel:camel-spring:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-main:3.19.0
+|    |    |         +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-base:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-management-api:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |         \--- org.apache.camel:camel-core-languages:3.19.0
+|    |    |              +--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    |              +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |              \--- org.slf4j:slf4j-api:1.7.36
+|    |    +--- org.apache.camel:camel-util-json:3.19.0
+|    |    +--- org.apache.camel:camel-xml-jaxb-dsl:3.19.0
+|    |    |    +--- org.apache.camel:camel-xml-jaxb:3.19.0
+|    |    |    |    +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3 (*)
+|    |    |    |    +--- com.sun.xml.bind:jaxb-core:2.3.0
+|    |    |    |    +--- com.sun.xml.bind:jaxb-impl:2.3.3
+|    |    |    |    |    \--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3 (*)
+|    |    |    |    +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    |    |    \--- org.apache.camel:camel-xml-jaxp:3.19.0
+|    |    |    |         +--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    |    |         +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |         \--- org.apache.camel:camel-xml-io-util:3.19.0
+|    |    |    |              \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    \--- org.apache.camel:camel-dsl-support:3.19.0
+|    |    |         +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |         \--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    +--- org.apache.camel:camel-spring-xml:3.19.0
+|    |    |    +--- org.apache.camel:camel-spring:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-xml-jaxb:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-core-xml:3.19.0
+|    |    |    |    \--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    |    \--- javax.annotation:javax.annotation-api:1.3.2
+|    |    +--- org.apache.camel:camel-cloud:3.19.0
+|    |    |    \--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    +--- org.apache.camel:camel-cluster:3.19.0
+|    |    |    +--- org.apache.camel:camel-base-engine:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    \--- org.apache.camel:camel-health:3.19.0
+|    |         +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |         \--- org.slf4j:slf4j-api:1.7.36
+|    +--- org.apache.camel.springboot:camel-core-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-spring-boot:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-bean-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-bean:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-browse-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-browse:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-controlbus-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-controlbus:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-dataformat-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-dataformat:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-dataset-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-dataset:3.19.0
+|    |    |    \--- org.apache.camel:camel-mock:3.19.0
+|    |    |         \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-direct-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-direct:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-directvm-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-directvm:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-file-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-file:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-cluster:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-language-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-language:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-log-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-log:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-mock-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-mock:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-ref-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-ref:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-rest-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-rest:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-tooling-model:3.19.0
+|    |    |         \--- org.apache.camel:camel-util-json:3.19.0
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-saga-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-saga:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-scheduler-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-scheduler:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-seda-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-seda:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-stub-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-stub:3.19.0
+|    |    |    \--- org.apache.camel:camel-vm:3.19.0
+|    |    |         \--- org.apache.camel:camel-seda:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-timer-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-timer:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-validator-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-validator:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-vm-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-vm:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-xpath-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-xpath:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-xslt-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-xslt:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    \--- org.apache.camel.springboot:camel-xml-jaxp-starter:3.19.0
+|         +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|         +--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|         \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
++--- io.camunda:zeebe-client-java:8.1.4
+|    +--- io.camunda:zeebe-bpmn-model:8.1.4
+|    |    +--- org.camunda.bpm.model:camunda-xml-model:7.17.0
+|    |    \--- org.slf4j:slf4j-api:1.7.36
+|    +--- com.fasterxml.jackson.core:jackson-core:2.14.0 -> 2.13.4 (*)
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.14.0 -> 2.13.4.2 (*)
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.14.0 -> 2.13.4 (*)
+|    +--- io.camunda:zeebe-gateway-protocol-impl:8.1.4
+|    |    +--- io.grpc:grpc-api:1.49.1
+|    |    |    +--- io.grpc:grpc-context:1.49.1
+|    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    \--- com.google.errorprone:error_prone_annotations:2.14.0
+|    |    +--- io.grpc:grpc-protobuf:1.49.1
+|    |    |    +--- io.grpc:grpc-api:1.49.1 (*)
+|    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    +--- com.google.protobuf:protobuf-java:3.21.1 -> 3.21.9
+|    |    |    +--- com.google.api.grpc:proto-google-common-protos:2.9.0
+|    |    |    |    \--- com.google.protobuf:protobuf-java:3.21.1 -> 3.21.9
+|    |    |    \--- io.grpc:grpc-protobuf-lite:1.49.1
+|    |    |         \--- io.grpc:grpc-api:1.49.1 (*)
+|    |    +--- io.grpc:grpc-stub:1.49.1
+|    |    |    +--- io.grpc:grpc-api:1.49.1 (*)
+|    |    |    \--- com.google.guava:guava:31.1-android -> 31.1-jre
+|    |    |         +--- com.google.guava:failureaccess:1.0.1
+|    |    |         +--- com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava
+|    |    |         +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |         +--- org.checkerframework:checker-qual:3.12.0
+|    |    |         +--- com.google.errorprone:error_prone_annotations:2.11.0 -> 2.14.0
+|    |    |         \--- com.google.j2objc:j2objc-annotations:1.3
+|    |    +--- com.google.guava:guava:31.1-jre (*)
+|    |    \--- com.google.protobuf:protobuf-java:3.21.9
+|    +--- org.slf4j:slf4j-api:1.7.36
+|    +--- io.grpc:grpc-stub:1.49.1 (*)
+|    +--- io.grpc:grpc-core:1.49.1
+|    |    \--- io.grpc:grpc-api:1.49.1 (*)
+|    +--- io.grpc:grpc-api:1.49.1 (*)
+|    +--- io.grpc:grpc-netty:1.49.1
+|    |    +--- io.grpc:grpc-core:1.49.1 (*)
+|    |    \--- io.netty:netty-codec-http2:4.1.77.Final -> 4.1.85.Final
+|    |         +--- io.netty:netty-common:4.1.85.Final
+|    |         +--- io.netty:netty-buffer:4.1.85.Final
+|    |         |    \--- io.netty:netty-common:4.1.85.Final
+|    |         +--- io.netty:netty-transport:4.1.85.Final
+|    |         |    +--- io.netty:netty-common:4.1.85.Final
+|    |         |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |         |    \--- io.netty:netty-resolver:4.1.85.Final
+|    |         |         \--- io.netty:netty-common:4.1.85.Final
+|    |         +--- io.netty:netty-codec:4.1.85.Final
+|    |         |    +--- io.netty:netty-common:4.1.85.Final
+|    |         |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |         |    \--- io.netty:netty-transport:4.1.85.Final (*)
+|    |         +--- io.netty:netty-handler:4.1.85.Final
+|    |         |    +--- io.netty:netty-common:4.1.85.Final
+|    |         |    +--- io.netty:netty-resolver:4.1.85.Final (*)
+|    |         |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |         |    +--- io.netty:netty-transport:4.1.85.Final (*)
+|    |         |    +--- io.netty:netty-transport-native-unix-common:4.1.85.Final
+|    |         |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |         |    |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |         |    |    \--- io.netty:netty-transport:4.1.85.Final (*)
+|    |         |    \--- io.netty:netty-codec:4.1.85.Final (*)
+|    |         \--- io.netty:netty-codec-http:4.1.85.Final
+|    |              +--- io.netty:netty-common:4.1.85.Final
+|    |              +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |              +--- io.netty:netty-transport:4.1.85.Final (*)
+|    |              +--- io.netty:netty-codec:4.1.85.Final (*)
+|    |              \--- io.netty:netty-handler:4.1.85.Final (*)
+|    +--- com.google.protobuf:protobuf-java:3.21.9
+|    +--- io.netty:netty-handler:4.1.82.Final -> 4.1.85.Final (*)
+|    +--- io.netty:netty-common:4.1.82.Final -> 4.1.85.Final
+|    \--- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.0 -> 2.13.4
+|         +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
+|         +--- org.yaml:snakeyaml:1.31 -> 1.30
+|         +--- com.fasterxml.jackson.core:jackson-core:2.13.4 (*)
+|         \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
++--- org.apache.camel.springboot:camel-jackson-starter:3.19.0
+|    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    +--- org.apache.camel:camel-jackson:3.19.0
+|    |    +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    \--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
+|    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
++--- org.apache.camel:camel-endpointdsl:3.19.0
+|    +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    \--- org.slf4j:slf4j-api:1.7.36
++--- org.apache.camel:camel-undertow:3.19.0
+|    +--- org.apache.camel:camel-base:3.19.0 (*)
+|    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    +--- org.apache.camel:camel-cloud:3.19.0 (*)
+|    +--- org.apache.camel:camel-attachments:3.19.0
+|    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- com.sun.activation:javax.activation:1.2.0
+|    +--- org.apache.camel:camel-http-base:3.19.0
+|    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    +--- io.undertow:undertow-core:2.2.19.Final -> 2.2.20.Final
+|    |    +--- org.jboss.logging:jboss-logging:3.4.1.Final -> 3.4.3.Final
+|    |    +--- org.jboss.xnio:xnio-api:3.8.7.Final
+|    |    |    +--- org.wildfly.common:wildfly-common:1.5.4.Final
+|    |    |    \--- org.wildfly.client:wildfly-client-config:1.0.1.Final
+|    |    |         \--- org.jboss.logging:jboss-logging:3.3.1.Final -> 3.4.3.Final
+|    |    \--- org.jboss.threads:jboss-threads:3.1.0.Final
+|    |         \--- org.jboss.logging:jboss-logging:3.4.1.Final -> 3.4.3.Final
+|    \--- io.undertow:undertow-servlet:2.2.19.Final -> 2.2.20.Final
+|         +--- io.undertow:undertow-core:2.2.20.Final (*)
+|         +--- org.jboss.spec.javax.servlet:jboss-servlet-api_4.0_spec:2.0.0.Final
+|         \--- org.jboss.spec.javax.annotation:jboss-annotations-api_1.3_spec:2.0.1.Final
++--- org.apache.camel:camel-http:3.19.0
+|    +--- org.apache.camel:camel-cloud:3.19.0 (*)
+|    +--- org.apache.camel:camel-http-common:3.19.0
+|    |    +--- org.apache.camel:camel-http-base:3.19.0 (*)
+|    |    +--- org.apache.camel:camel-cloud:3.19.0 (*)
+|    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel:camel-attachments:3.19.0 (*)
+|    +--- org.apache.camel:camel-file:3.19.0 (*)
+|    +--- javax.servlet:javax.servlet-api:3.1.0 -> 4.0.1
+|    \--- org.apache.httpcomponents:httpclient:4.5.13
+|         +--- org.apache.httpcomponents:httpcore:4.4.13 -> 4.4.15
+|         \--- commons-codec:commons-codec:1.11 -> 1.15
++--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.0 (*)
++--- org.json:json:20220924
++--- com.google.code.gson:gson:2.10.1
+\--- org.springframework.boot:spring-boot-starter-test -> 2.7.6
+     +--- org.springframework.boot:spring-boot-starter:2.7.6 (*)
+     +--- org.springframework.boot:spring-boot-test:2.7.6
+     |    \--- org.springframework.boot:spring-boot:2.7.6 (*)
+     +--- org.springframework.boot:spring-boot-test-autoconfigure:2.7.6
+     |    +--- org.springframework.boot:spring-boot:2.7.6 (*)
+     |    +--- org.springframework.boot:spring-boot-test:2.7.6 (*)
+     |    \--- org.springframework.boot:spring-boot-autoconfigure:2.7.6 (*)
+     +--- com.jayway.jsonpath:json-path:2.7.0
+     |    +--- net.minidev:json-smart:2.4.7 -> 2.4.8
+     |    |    \--- net.minidev:accessors-smart:2.4.8
+     |    |         \--- org.ow2.asm:asm:9.1
+     |    \--- org.slf4j:slf4j-api:1.7.33 -> 1.7.36
+     +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3 (*)
+     +--- org.assertj:assertj-core:3.22.0
+     +--- org.hamcrest:hamcrest:2.2
+     +--- org.junit.jupiter:junit-jupiter:5.8.2
+     |    +--- org.junit:junit-bom:5.8.2
+     |    |    +--- org.junit.jupiter:junit-jupiter:5.8.2 (c)
+     |    |    +--- org.junit.jupiter:junit-jupiter-api:5.8.2 (c)
+     |    |    +--- org.junit.jupiter:junit-jupiter-params:5.8.2 (c)
+     |    |    \--- org.junit.platform:junit-platform-commons:1.8.2 (c)
+     |    +--- org.junit.jupiter:junit-jupiter-api:5.8.2
+     |    |    +--- org.junit:junit-bom:5.8.2 (*)
+     |    |    +--- org.opentest4j:opentest4j:1.2.0
+     |    |    +--- org.junit.platform:junit-platform-commons:1.8.2
+     |    |    |    +--- org.junit:junit-bom:5.8.2 (*)
+     |    |    |    \--- org.apiguardian:apiguardian-api:1.1.2
+     |    |    \--- org.apiguardian:apiguardian-api:1.1.2
+     |    \--- org.junit.jupiter:junit-jupiter-params:5.8.2
+     |         +--- org.junit:junit-bom:5.8.2 (*)
+     |         +--- org.junit.jupiter:junit-jupiter-api:5.8.2 (*)
+     |         \--- org.apiguardian:apiguardian-api:1.1.2
+     +--- org.mockito:mockito-core:4.5.1
+     |    +--- net.bytebuddy:byte-buddy:1.12.9 -> 1.12.19
+     |    \--- net.bytebuddy:byte-buddy-agent:1.12.9 -> 1.12.19
+     +--- org.mockito:mockito-junit-jupiter:4.5.1
+     |    \--- org.mockito:mockito-core:4.5.1 (*)
+     +--- org.skyscreamer:jsonassert:1.5.1
+     |    \--- com.vaadin.external.google:android-json:0.0.20131108.vaadin1
+     +--- org.springframework:spring-core:5.3.24 (*)
+     +--- org.springframework:spring-test:5.3.24
+     |    \--- org.springframework:spring-core:5.3.24 (*)
+     \--- org.xmlunit:xmlunit-core:2.9.0
+
+testCompileOnly - Compile only dependencies for source set 'test'. (n)
+No dependencies
+
+testImplementation - Implementation only dependencies for source set 'test'. (n)
+\--- org.springframework.boot:spring-boot-starter-test (n)
+
+testResultsElementsForTest - Directory containing binary results of running tests for the test Test Suite's test target. (n)
+No dependencies
+
+testRuntimeClasspath - Runtime classpath of source set 'test'.
++--- org.springframework.boot:spring-boot-starter -> 2.7.6
+|    +--- org.springframework.boot:spring-boot:2.7.6
+|    |    +--- org.springframework:spring-core:5.3.24
+|    |    |    \--- org.springframework:spring-jcl:5.3.24
+|    |    \--- org.springframework:spring-context:5.3.24
+|    |         +--- org.springframework:spring-aop:5.3.24
+|    |         |    +--- org.springframework:spring-beans:5.3.24
+|    |         |    |    \--- org.springframework:spring-core:5.3.24 (*)
+|    |         |    \--- org.springframework:spring-core:5.3.24 (*)
+|    |         +--- org.springframework:spring-beans:5.3.24 (*)
+|    |         +--- org.springframework:spring-core:5.3.24 (*)
+|    |         \--- org.springframework:spring-expression:5.3.24
+|    |              \--- org.springframework:spring-core:5.3.24 (*)
+|    +--- org.springframework.boot:spring-boot-autoconfigure:2.7.6
+|    |    \--- org.springframework.boot:spring-boot:2.7.6 (*)
+|    +--- org.springframework.boot:spring-boot-starter-logging:2.7.6
+|    |    +--- ch.qos.logback:logback-classic:1.2.11
+|    |    |    +--- ch.qos.logback:logback-core:1.2.11
+|    |    |    \--- org.slf4j:slf4j-api:1.7.32 -> 1.7.36
+|    |    +--- org.apache.logging.log4j:log4j-to-slf4j:2.17.2
+|    |    |    +--- org.slf4j:slf4j-api:1.7.35 -> 1.7.36
+|    |    |    \--- org.apache.logging.log4j:log4j-api:2.17.2
+|    |    \--- org.slf4j:jul-to-slf4j:1.7.36
+|    |         \--- org.slf4j:slf4j-api:1.7.36
+|    +--- jakarta.annotation:jakarta.annotation-api:1.3.5
+|    +--- org.springframework:spring-core:5.3.24 (*)
+|    \--- org.yaml:snakeyaml:1.30
++--- org.mifos:ph-ee-connector-common:1.5.1-SNAPSHOT FAILED
++--- org.springframework.boot:spring-boot-starter-web -> 2.7.6
+|    +--- org.springframework.boot:spring-boot-starter:2.7.6 (*)
+|    +--- org.springframework.boot:spring-boot-starter-json:2.7.6
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.6 (*)
+|    |    +--- org.springframework:spring-web:5.3.24
+|    |    |    +--- org.springframework:spring-beans:5.3.24 (*)
+|    |    |    \--- org.springframework:spring-core:5.3.24 (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.4
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.14.0 -> 2.13.4 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.14.0 -> 2.13.4 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-databind:2.14.0 -> 2.13.4.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.0 -> 2.13.4 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.14.0 -> 2.13.4 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.0 (c)
+|    |    |    |         \--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.0 -> 2.13.4 (c)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.13.4
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
+|    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.4
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.13.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
+|    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.4 -> 2.14.0
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.14.0 -> 2.13.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.14.0 -> 2.13.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.14.0 -> 2.13.4.2 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.14.0 (*)
+|    |    \--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.4
+|    |         +--- com.fasterxml.jackson.core:jackson-core:2.13.4 (*)
+|    |         +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
+|    |         \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
+|    +--- org.springframework.boot:spring-boot-starter-tomcat:2.7.6
+|    |    +--- jakarta.annotation:jakarta.annotation-api:1.3.5
+|    |    +--- org.apache.tomcat.embed:tomcat-embed-core:9.0.69
+|    |    +--- org.apache.tomcat.embed:tomcat-embed-el:9.0.69
+|    |    \--- org.apache.tomcat.embed:tomcat-embed-websocket:9.0.69
+|    |         \--- org.apache.tomcat.embed:tomcat-embed-core:9.0.69
+|    +--- org.springframework:spring-web:5.3.24 (*)
+|    \--- org.springframework:spring-webmvc:5.3.24
+|         +--- org.springframework:spring-aop:5.3.24 (*)
+|         +--- org.springframework:spring-beans:5.3.24 (*)
+|         +--- org.springframework:spring-context:5.3.24 (*)
+|         +--- org.springframework:spring-core:5.3.24 (*)
+|         +--- org.springframework:spring-expression:5.3.24 (*)
+|         \--- org.springframework:spring-web:5.3.24 (*)
++--- org.springframework.boot:spring-boot-starter-actuator -> 2.7.6
+|    +--- org.springframework.boot:spring-boot-starter:2.7.6 (*)
+|    +--- org.springframework.boot:spring-boot-actuator-autoconfigure:2.7.6
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.4.2 (*)
+|    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.4 -> 2.14.0 (*)
+|    |    +--- org.springframework.boot:spring-boot-actuator:2.7.6
+|    |    |    \--- org.springframework.boot:spring-boot:2.7.6 (*)
+|    |    +--- org.springframework.boot:spring-boot:2.7.6 (*)
+|    |    \--- org.springframework.boot:spring-boot-autoconfigure:2.7.6 (*)
+|    \--- io.micrometer:micrometer-core:1.9.6
+|         +--- org.hdrhistogram:HdrHistogram:2.1.12
+|         \--- org.latencyutils:LatencyUtils:2.0.3
++--- org.apache.camel.springboot:camel-spring-boot-starter:3.19.0
+|    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    +--- org.apache.camel.springboot:camel-spring-boot:3.19.0
+|    |    +--- org.apache.camel:camel-spring:3.19.0
+|    |    |    +--- org.apache.camel:camel-core-engine:3.19.0
+|    |    |    |    +--- org.apache.camel:camel-api:3.19.0
+|    |    |    |    |    +--- org.apache.camel:camel-util:3.19.0
+|    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    +--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    \--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3
+|    |    |    |    |         \--- jakarta.activation:jakarta.activation-api:1.2.2
+|    |    |    |    +--- org.apache.camel:camel-base-engine:3.19.0
+|    |    |    |    |    +--- org.apache.camel:camel-base:3.19.0
+|    |    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    |    +--- org.apache.camel:camel-management-api:3.19.0
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    |    +--- org.apache.camel:camel-support:3.19.0
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-management-api:3.19.0 (*)
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    |    +--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    |    +--- org.apache.camel:camel-core-reifier:3.19.0
+|    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |    |    +--- org.apache.camel:camel-core-model:3.19.0
+|    |    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    |    +--- org.apache.camel:camel-core-processor:3.19.0
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |    |    |    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |    |    |    |    \--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |    |    |    \--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    |    +--- org.apache.camel:camel-core-processor:3.19.0 (*)
+|    |    |    |    |    \--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    |    +--- org.apache.camel:camel-management-api:3.19.0 (*)
+|    |    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |    \--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-management-api:3.19.0 (*)
+|    |    |    +--- org.springframework:spring-core:5.3.23 -> 5.3.24 (*)
+|    |    |    +--- org.springframework:spring-aop:5.3.23 -> 5.3.24 (*)
+|    |    |    +--- org.springframework:spring-context:5.3.23 -> 5.3.24 (*)
+|    |    |    +--- org.springframework:spring-beans:5.3.23 -> 5.3.24 (*)
+|    |    |    +--- org.springframework:spring-expression:5.3.23 -> 5.3.24 (*)
+|    |    |    \--- org.springframework:spring-tx:5.3.23 -> 5.3.24
+|    |    |         +--- org.springframework:spring-beans:5.3.24 (*)
+|    |    |         \--- org.springframework:spring-core:5.3.24 (*)
+|    |    +--- org.apache.camel:camel-spring-main:3.19.0
+|    |    |    +--- org.apache.camel:camel-spring:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-main:3.19.0
+|    |    |         +--- org.apache.camel:camel-api:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-base:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-management-api:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |         +--- org.apache.camel:camel-util:3.19.0 (*)
+|    |    |         \--- org.apache.camel:camel-core-languages:3.19.0
+|    |    |              +--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    |              +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |              \--- org.slf4j:slf4j-api:1.7.36
+|    |    +--- org.apache.camel:camel-util-json:3.19.0
+|    |    +--- org.apache.camel:camel-xml-jaxb-dsl:3.19.0
+|    |    |    +--- org.apache.camel:camel-xml-jaxb:3.19.0
+|    |    |    |    +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3 (*)
+|    |    |    |    +--- com.sun.xml.bind:jaxb-core:2.3.0
+|    |    |    |    +--- com.sun.xml.bind:jaxb-impl:2.3.3
+|    |    |    |    |    +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3 (*)
+|    |    |    |    |    \--- com.sun.activation:jakarta.activation:1.2.2
+|    |    |    |    +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    |    |    \--- org.apache.camel:camel-xml-jaxp:3.19.0
+|    |    |    |         +--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    |    |         +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    |         \--- org.apache.camel:camel-xml-io-util:3.19.0
+|    |    |    |              \--- org.slf4j:slf4j-api:1.7.36
+|    |    |    \--- org.apache.camel:camel-dsl-support:3.19.0
+|    |    |         +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |         \--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    +--- org.apache.camel:camel-spring-xml:3.19.0
+|    |    |    +--- org.apache.camel:camel-spring:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-xml-jaxb:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-core-xml:3.19.0
+|    |    |    |    \--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    |    \--- javax.annotation:javax.annotation-api:1.3.2
+|    |    +--- org.apache.camel:camel-cloud:3.19.0
+|    |    |    \--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    +--- org.apache.camel:camel-cluster:3.19.0
+|    |    |    +--- org.apache.camel:camel-base-engine:3.19.0 (*)
+|    |    |    +--- org.apache.camel:camel-core-model:3.19.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.36
+|    |    \--- org.apache.camel:camel-health:3.19.0
+|    |         +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |         \--- org.slf4j:slf4j-api:1.7.36
+|    +--- org.apache.camel.springboot:camel-core-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-spring-boot:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-bean-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-bean:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-browse-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-browse:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-controlbus-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-controlbus:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-dataformat-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-dataformat:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-dataset-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-dataset:3.19.0
+|    |    |    \--- org.apache.camel:camel-mock:3.19.0
+|    |    |         \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-direct-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-direct:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-directvm-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-directvm:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-file-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-file:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-cluster:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-language-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-language:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-log-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-log:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-mock-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-mock:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-ref-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-ref:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-rest-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-rest:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-tooling-model:3.19.0
+|    |    |         \--- org.apache.camel:camel-util-json:3.19.0
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-saga-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-saga:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-scheduler-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-scheduler:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-seda-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-seda:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-stub-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-stub:3.19.0
+|    |    |    \--- org.apache.camel:camel-vm:3.19.0
+|    |    |         \--- org.apache.camel:camel-seda:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-timer-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-timer:3.19.0
+|    |    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-validator-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-validator:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-vm-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-vm:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-xpath-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-xpath:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    +--- org.apache.camel.springboot:camel-xslt-starter:3.19.0
+|    |    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    |    +--- org.apache.camel:camel-xslt:3.19.0
+|    |    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    |    \--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|    |    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
+|    \--- org.apache.camel.springboot:camel-xml-jaxp-starter:3.19.0
+|         +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|         +--- org.apache.camel:camel-xml-jaxp:3.19.0 (*)
+|         \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
++--- io.camunda:zeebe-client-java:8.1.4
+|    +--- io.camunda:zeebe-bpmn-model:8.1.4
+|    |    +--- org.camunda.bpm.model:camunda-xml-model:7.17.0
+|    |    \--- org.slf4j:slf4j-api:1.7.36
+|    +--- com.fasterxml.jackson.core:jackson-core:2.14.0 -> 2.13.4 (*)
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.14.0 -> 2.13.4.2 (*)
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.14.0 -> 2.13.4 (*)
+|    +--- io.camunda:zeebe-gateway-protocol-impl:8.1.4
+|    |    +--- io.grpc:grpc-api:1.49.1
+|    |    |    +--- io.grpc:grpc-context:1.49.1
+|    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    +--- com.google.errorprone:error_prone_annotations:2.14.0
+|    |    |    \--- com.google.guava:guava:31.1-android -> 31.1-jre
+|    |    |         +--- com.google.guava:failureaccess:1.0.1
+|    |    |         +--- com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava
+|    |    |         +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |         +--- org.checkerframework:checker-qual:3.12.0
+|    |    |         +--- com.google.errorprone:error_prone_annotations:2.11.0 -> 2.14.0
+|    |    |         \--- com.google.j2objc:j2objc-annotations:1.3
+|    |    +--- io.grpc:grpc-protobuf:1.49.1
+|    |    |    +--- io.grpc:grpc-api:1.49.1 (*)
+|    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    +--- com.google.protobuf:protobuf-java:3.21.1 -> 3.21.9
+|    |    |    +--- com.google.api.grpc:proto-google-common-protos:2.9.0
+|    |    |    |    \--- com.google.protobuf:protobuf-java:3.21.1 -> 3.21.9
+|    |    |    +--- io.grpc:grpc-protobuf-lite:1.49.1
+|    |    |    |    +--- io.grpc:grpc-api:1.49.1 (*)
+|    |    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    |    \--- com.google.guava:guava:31.1-android -> 31.1-jre (*)
+|    |    |    \--- com.google.guava:guava:31.1-android -> 31.1-jre (*)
+|    |    +--- io.grpc:grpc-stub:1.49.1
+|    |    |    +--- io.grpc:grpc-api:1.49.1 (*)
+|    |    |    +--- com.google.guava:guava:31.1-android -> 31.1-jre (*)
+|    |    |    \--- com.google.errorprone:error_prone_annotations:2.14.0
+|    |    +--- com.google.guava:guava:31.1-jre (*)
+|    |    \--- com.google.protobuf:protobuf-java:3.21.9
+|    +--- org.slf4j:slf4j-api:1.7.36
+|    +--- io.grpc:grpc-stub:1.49.1 (*)
+|    +--- io.grpc:grpc-core:1.49.1
+|    |    +--- io.grpc:grpc-api:1.49.1 (*)
+|    |    +--- com.google.code.gson:gson:2.9.0 -> 2.10.1
+|    |    +--- com.google.android:annotations:4.1.1.4
+|    |    +--- org.codehaus.mojo:animal-sniffer-annotations:1.21
+|    |    +--- com.google.errorprone:error_prone_annotations:2.14.0
+|    |    +--- com.google.guava:guava:31.1-android -> 31.1-jre (*)
+|    |    \--- io.perfmark:perfmark-api:0.25.0
+|    +--- io.grpc:grpc-api:1.49.1 (*)
+|    +--- io.grpc:grpc-netty:1.49.1
+|    |    +--- io.grpc:grpc-core:1.49.1 (*)
+|    |    +--- io.netty:netty-codec-http2:4.1.77.Final -> 4.1.85.Final
+|    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.85.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.85.Final
+|    |    |    +--- io.netty:netty-transport:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |    |    \--- io.netty:netty-resolver:4.1.85.Final
+|    |    |    |         \--- io.netty:netty-common:4.1.85.Final
+|    |    |    +--- io.netty:netty-codec:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |    |    \--- io.netty:netty-transport:4.1.85.Final (*)
+|    |    |    +--- io.netty:netty-handler:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-resolver:4.1.85.Final (*)
+|    |    |    |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |    |    +--- io.netty:netty-transport:4.1.85.Final (*)
+|    |    |    |    +--- io.netty:netty-transport-native-unix-common:4.1.85.Final
+|    |    |    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    |    |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |    |    |    \--- io.netty:netty-transport:4.1.85.Final (*)
+|    |    |    |    \--- io.netty:netty-codec:4.1.85.Final (*)
+|    |    |    \--- io.netty:netty-codec-http:4.1.85.Final
+|    |    |         +--- io.netty:netty-common:4.1.85.Final
+|    |    |         +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |         +--- io.netty:netty-transport:4.1.85.Final (*)
+|    |    |         +--- io.netty:netty-codec:4.1.85.Final (*)
+|    |    |         \--- io.netty:netty-handler:4.1.85.Final (*)
+|    |    +--- io.netty:netty-handler-proxy:4.1.77.Final -> 4.1.85.Final
+|    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.85.Final (*)
+|    |    |    +--- io.netty:netty-codec:4.1.85.Final (*)
+|    |    |    +--- io.netty:netty-codec-socks:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.85.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.85.Final (*)
+|    |    |    |    +--- io.netty:netty-transport:4.1.85.Final (*)
+|    |    |    |    \--- io.netty:netty-codec:4.1.85.Final (*)
+|    |    |    \--- io.netty:netty-codec-http:4.1.85.Final (*)
+|    |    +--- com.google.guava:guava:31.1-android -> 31.1-jre (*)
+|    |    +--- com.google.errorprone:error_prone_annotations:2.14.0
+|    |    +--- io.perfmark:perfmark-api:0.25.0
+|    |    \--- io.netty:netty-transport-native-unix-common:4.1.77.Final -> 4.1.85.Final (*)
+|    +--- com.google.protobuf:protobuf-java:3.21.9
+|    +--- io.netty:netty-tcnative-boringssl-static:2.0.54.Final
+|    |    \--- io.netty:netty-tcnative-classes:2.0.54.Final
+|    +--- io.netty:netty-handler:4.1.82.Final -> 4.1.85.Final (*)
+|    +--- io.netty:netty-common:4.1.82.Final -> 4.1.85.Final
+|    \--- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.0 -> 2.13.4
+|         +--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
+|         +--- org.yaml:snakeyaml:1.31 -> 1.30
+|         +--- com.fasterxml.jackson.core:jackson-core:2.13.4 (*)
+|         \--- com.fasterxml.jackson:jackson-bom:2.13.4 -> 2.14.0 (*)
++--- org.apache.camel.springboot:camel-jackson-starter:3.19.0
+|    +--- org.springframework.boot:spring-boot-starter:2.7.3 -> 2.7.6 (*)
+|    +--- org.apache.camel:camel-jackson:3.19.0
+|    |    +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    |    \--- com.fasterxml.jackson.core:jackson-databind:2.13.4 -> 2.13.4.2 (*)
+|    \--- org.apache.camel.springboot:camel-core-starter:3.19.0 (*)
++--- org.apache.camel:camel-endpointdsl:3.19.0
+|    +--- org.apache.camel:camel-core-engine:3.19.0 (*)
+|    \--- org.slf4j:slf4j-api:1.7.36
++--- org.apache.camel:camel-undertow:3.19.0
+|    +--- org.apache.camel:camel-base:3.19.0 (*)
+|    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    +--- org.apache.camel:camel-cloud:3.19.0 (*)
+|    +--- org.apache.camel:camel-attachments:3.19.0
+|    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- com.sun.activation:javax.activation:1.2.0
+|    +--- org.apache.camel:camel-http-base:3.19.0
+|    |    \--- org.apache.camel:camel-support:3.19.0 (*)
+|    +--- io.undertow:undertow-core:2.2.19.Final -> 2.2.20.Final
+|    |    +--- org.jboss.logging:jboss-logging:3.4.1.Final -> 3.4.3.Final
+|    |    +--- org.jboss.xnio:xnio-api:3.8.7.Final
+|    |    |    +--- org.wildfly.common:wildfly-common:1.5.4.Final
+|    |    |    +--- org.wildfly.client:wildfly-client-config:1.0.1.Final
+|    |    |    |    \--- org.jboss.logging:jboss-logging:3.3.1.Final -> 3.4.3.Final
+|    |    |    \--- org.jboss.threads:jboss-threads:2.3.6.Final -> 3.1.0.Final
+|    |    |         +--- org.jboss.logging:jboss-logging:3.4.1.Final -> 3.4.3.Final
+|    |    |         \--- org.wildfly.common:wildfly-common:1.5.0.Final -> 1.5.4.Final
+|    |    +--- org.jboss.xnio:xnio-nio:3.8.7.Final
+|    |    |    \--- org.jboss.xnio:xnio-api:3.8.7.Final (*)
+|    |    \--- org.jboss.threads:jboss-threads:3.1.0.Final (*)
+|    \--- io.undertow:undertow-servlet:2.2.19.Final -> 2.2.20.Final
+|         +--- io.undertow:undertow-core:2.2.20.Final (*)
+|         +--- org.jboss.spec.javax.servlet:jboss-servlet-api_4.0_spec:2.0.0.Final
+|         \--- org.jboss.spec.javax.annotation:jboss-annotations-api_1.3_spec:2.0.1.Final
++--- org.apache.camel:camel-http:3.19.0
+|    +--- org.apache.camel:camel-cloud:3.19.0 (*)
+|    +--- org.apache.camel:camel-http-common:3.19.0
+|    |    +--- org.apache.camel:camel-http-base:3.19.0 (*)
+|    |    +--- org.apache.camel:camel-cloud:3.19.0 (*)
+|    |    +--- org.apache.camel:camel-support:3.19.0 (*)
+|    |    \--- org.apache.camel:camel-attachments:3.19.0 (*)
+|    +--- org.apache.camel:camel-file:3.19.0 (*)
+|    +--- javax.servlet:javax.servlet-api:3.1.0 -> 4.0.1
+|    \--- org.apache.httpcomponents:httpclient:4.5.13
+|         +--- org.apache.httpcomponents:httpcore:4.4.13 -> 4.4.15
+|         \--- commons-codec:commons-codec:1.11 -> 1.15
++--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.0 (*)
++--- org.json:json:20220924
++--- com.google.code.gson:gson:2.10.1
+\--- org.springframework.boot:spring-boot-starter-test -> 2.7.6
+     +--- org.springframework.boot:spring-boot-starter:2.7.6 (*)
+     +--- org.springframework.boot:spring-boot-test:2.7.6
+     |    \--- org.springframework.boot:spring-boot:2.7.6 (*)
+     +--- org.springframework.boot:spring-boot-test-autoconfigure:2.7.6
+     |    +--- org.springframework.boot:spring-boot:2.7.6 (*)
+     |    +--- org.springframework.boot:spring-boot-test:2.7.6 (*)
+     |    \--- org.springframework.boot:spring-boot-autoconfigure:2.7.6 (*)
+     +--- com.jayway.jsonpath:json-path:2.7.0
+     |    +--- net.minidev:json-smart:2.4.7 -> 2.4.8
+     |    |    \--- net.minidev:accessors-smart:2.4.8
+     |    |         \--- org.ow2.asm:asm:9.1
+     |    \--- org.slf4j:slf4j-api:1.7.33 -> 1.7.36
+     +--- jakarta.xml.bind:jakarta.xml.bind-api:2.3.3 (*)
+     +--- org.assertj:assertj-core:3.22.0
+     +--- org.hamcrest:hamcrest:2.2
+     +--- org.junit.jupiter:junit-jupiter:5.8.2
+     |    +--- org.junit:junit-bom:5.8.2
+     |    |    +--- org.junit.jupiter:junit-jupiter:5.8.2 (c)
+     |    |    +--- org.junit.jupiter:junit-jupiter-api:5.8.2 (c)
+     |    |    +--- org.junit.jupiter:junit-jupiter-engine:5.8.2 (c)
+     |    |    +--- org.junit.jupiter:junit-jupiter-params:5.8.2 (c)
+     |    |    +--- org.junit.platform:junit-platform-commons:1.8.2 (c)
+     |    |    \--- org.junit.platform:junit-platform-engine:1.8.2 (c)
+     |    +--- org.junit.jupiter:junit-jupiter-api:5.8.2
+     |    |    +--- org.junit:junit-bom:5.8.2 (*)
+     |    |    +--- org.opentest4j:opentest4j:1.2.0
+     |    |    \--- org.junit.platform:junit-platform-commons:1.8.2
+     |    |         \--- org.junit:junit-bom:5.8.2 (*)
+     |    +--- org.junit.jupiter:junit-jupiter-params:5.8.2
+     |    |    +--- org.junit:junit-bom:5.8.2 (*)
+     |    |    \--- org.junit.jupiter:junit-jupiter-api:5.8.2 (*)
+     |    \--- org.junit.jupiter:junit-jupiter-engine:5.8.2
+     |         +--- org.junit:junit-bom:5.8.2 (*)
+     |         +--- org.junit.platform:junit-platform-engine:1.8.2
+     |         |    +--- org.junit:junit-bom:5.8.2 (*)
+     |         |    +--- org.opentest4j:opentest4j:1.2.0
+     |         |    \--- org.junit.platform:junit-platform-commons:1.8.2 (*)
+     |         \--- org.junit.jupiter:junit-jupiter-api:5.8.2 (*)
+     +--- org.mockito:mockito-core:4.5.1
+     |    +--- net.bytebuddy:byte-buddy:1.12.9 -> 1.12.19
+     |    +--- net.bytebuddy:byte-buddy-agent:1.12.9 -> 1.12.19
+     |    \--- org.objenesis:objenesis:3.2
+     +--- org.mockito:mockito-junit-jupiter:4.5.1
+     |    +--- org.mockito:mockito-core:4.5.1 (*)
+     |    \--- org.junit.jupiter:junit-jupiter-api:5.8.2 (*)
+     +--- org.skyscreamer:jsonassert:1.5.1
+     |    \--- com.vaadin.external.google:android-json:0.0.20131108.vaadin1
+     +--- org.springframework:spring-core:5.3.24 (*)
+     +--- org.springframework:spring-test:5.3.24
+     |    \--- org.springframework:spring-core:5.3.24 (*)
+     \--- org.xmlunit:xmlunit-core:2.9.0
+
+testRuntimeOnly - Runtime only dependencies for source set 'test'. (n)
+No dependencies
+
+(c) - dependency constraint
+(*) - dependencies omitted (listed previously)
+
+(n) - Not resolved (configuration is not meant to be resolved)
+
+A web-based, searchable dependency report is available by adding the --scan option.
