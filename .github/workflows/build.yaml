@@ -83,7 +83,7 @@ jobs:
         password: ${{ secrets.ACR_PULL_PASSWORD }}
 
     - name: Build Docker image
-      run: docker build . -t oaftech.azurecr.io/oneacrefund/tnm-connector:${{ steps.set-image-tag.outputs.IMAGE_TAG }}
+      run: docker build . -t ${{ vars.ACR_REGISTRY }}/oneacrefund/tnm-connector:${{ steps.set-image-tag.outputs.IMAGE_TAG }}
 
     - name: Push image to registry
       if: ${{ env.SHOULD_PUBLISH == 'true'}}

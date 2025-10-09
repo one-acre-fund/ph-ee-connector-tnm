@@ -117,8 +117,8 @@ jacocoTestReport {
     reports {
         xml.required = true // Enable XML report generation
         html.required = true // Enable HTML report generation
-        xml.outputLocation = file("${buildDir}/jacoco/testCoverage.xml") // XML output location
-        html.outputLocation = file("${buildDir}/reports/jacoco/test") // HTML output location
+        xml.destination file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml")
+        html.destination file("${buildDir}/reports/jacoco/test/html")
     }
 }
 tasks.named('test') {
