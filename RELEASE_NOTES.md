@@ -1,5 +1,8 @@
 Release Notes
 
+## OAF version 1.0.5
+        * [SER-3700] - Add paymentScheme to payments variables to indicate the MNO used
+
 ## OAF version 1.0.4
         * [SER-2890] - Refactor pay endpoint to check if provided transaction id is unique in the system
         * [SER-2890] - Refactor transaction status endpoint to return OAF reference as receipt number in the  response
