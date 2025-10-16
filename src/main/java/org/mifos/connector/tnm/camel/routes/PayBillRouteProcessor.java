@@ -12,8 +12,10 @@ import static org.mifos.connector.tnm.camel.config.CamelProperties.CONTENT_TYPE_
 import static org.mifos.connector.tnm.camel.config.CamelProperties.GET_ACCOUNT_DETAILS_FLAG;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.PAYBILL_TRANSACTION_ID_URL_PARAM;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.PAYBILL_TRANSFER_CODE;
+import static org.mifos.connector.tnm.camel.config.CamelProperties.PAYMENT_SCHEME;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.SECONDARY_IDENTIFIER_NAME;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.TENANT_ID;
+import static org.mifos.connector.tnm.camel.config.CamelProperties.TNM_CONSTANT;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.TNM_PAYBILL_WORKFLOW_SUBTYPE;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.TNM_PAYBILL_WORKFLOW_TYPE;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.TNM_PAY_OAF_TRANSACTION_REFERENCE;
@@ -220,6 +222,7 @@ public class PayBillRouteProcessor {
         variables.put("accountId", requestDto.getAccountNumber());
         variables.put("originDate", Long.parseLong(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"))));
         variables.put("phoneNumber", requestDto.getMsisdn());
+        variables.put(PAYMENT_SCHEME, TNM_CONSTANT);
         String tnmTransactionId = requestDto.getTransactionId();
         variables.put(SERVER_TRANSACTION_ID, tnmTransactionId);
         variables.put(EXTERNAL_ID, tnmTransactionId);

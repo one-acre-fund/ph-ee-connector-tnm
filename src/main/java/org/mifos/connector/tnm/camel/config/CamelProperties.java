@@ -38,4 +38,6 @@ public class CamelProperties {
     public static final String TNM_PAY_OAF_TRANSACTION_REFERENCE = "oafTransactionReference";
     public static final String TNM_VALIDATION_REQUEST_PAYLOAD = "validationRequest";
     public static final String PAYBILL_TRANSFER_CODE = "transferCode";
+    public static final String PAYMENT_SCHEME = "paymentScheme";
+    public static final String TNM_CONSTANT = "tnm";
 }
