@@ -1,7 +1,10 @@
 Release Notes
 
-## OAF version 1.0.5
+## OAF version 1.0.6
         * [SER-3700] - Add paymentScheme to payments variables to indicate the MNO used
+
+## OAF version 1.0.5
+        * [SER-3757] - Switch CI to GitHub Actions
 
 ## OAF version 1.0.4
         * [SER-2890] - Refactor pay endpoint to check if provided transaction id is unique in the system
