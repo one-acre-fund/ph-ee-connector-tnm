@@ -3,8 +3,10 @@ package org.mifos.connector.tnm.util;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.FINERACT_PRIMARY_IDENTIFIER_NAME;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.GET_ACCOUNT_DETAILS_FLAG;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.PAYBILL_TRANSFER_CODE;
+import static org.mifos.connector.tnm.camel.config.CamelProperties.PAYMENT_SCHEME;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.ROSTER_PRIMARY_IDENTIFIER_NAME;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.SECONDARY_IDENTIFIER_NAME;
+import static org.mifos.connector.tnm.camel.config.CamelProperties.TNM_CONSTANT;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.TNM_PAY_REQUEST_PAY_WAIT_PERIOD;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.TNM_TRX_ID;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.TNM_VALIDATION_REQUEST_PAYLOAD;
@@ -197,6 +199,8 @@ public class TnmUtils {
         transferCode.setKey(PAYBILL_TRANSFER_CODE);
         transferCode.setValue(payBillValidationResponseDto.getTransactionId());
 
+        CustomData paymentScheme = new CustomData(PAYMENT_SCHEME, TNM_CONSTANT);
+
         List<CustomData> customData = new ArrayList<>();
         customData.add(reconciled);
         customData.add(confirmationReceived);
@@ -208,6 +212,7 @@ public class TnmUtils {
         customData.add(currency);
         customData.add(tmmPayRequestWaitPeriod);
         customData.add(validationPayload);
+        customData.add(paymentScheme);
         return customData;
     }
 
