@@ -90,6 +90,9 @@ public class PayBillRouteProcessor {
     public static Map<String, Boolean> reconciledStore = new HashMap<>();
     public static Map<String, String> workflowInstanceStore = new HashMap<>();
 
+    @Value("${tenant}")
+    private String tenantId;
+
     /**
      * Build the request body for get account status request.
      *
@@ -159,7 +162,7 @@ public class PayBillRouteProcessor {
             e.getIn().removeHeaders("*");
             e.getIn().setHeader(ACCOUNT_HOLDING_INSTITUTION_ID, validationResponseDto.getAccountHoldingInstitutionId());
             e.getIn().setHeader(AMS_NAME, validationResponseDto.getAmsName());
-            e.getIn().setHeader(TENANT_ID, validationResponseDto.getAccountHoldingInstitutionId());
+            e.getIn().setHeader(TENANT_ID, tenantId);
             e.getIn().setHeader(X_CORRELATION_ID, clientCorrelationId);
             e.getIn().setHeader(CONTENT_TYPE, CONTENT_TYPE_VAL);
             e.getIn().setHeader(CLIENT_NAME, validationResponseDto.getClientName());
@@ -296,7 +299,7 @@ public class PayBillRouteProcessor {
         exchange.getIn().removeHeaders("*");
         exchange.getIn().setHeader(CONTENT_TYPE, CONTENT_TYPE_VAL);
         exchange.getIn().setHeader("requestType", "transfers");
-        exchange.getIn().setHeader(TENANT_ID, "oaf");
+        exchange.getIn().setHeader(TENANT_ID, tenantId);
 
         exchange.setProperty(PAYBILL_TRANSACTION_ID_URL_PARAM, tnmTransactionId.toString());
         exchange.setProperty(CHANNEL_URL, channelUrl);

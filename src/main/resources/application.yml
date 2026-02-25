@@ -36,8 +36,10 @@ logging:
 channel:
   host: "http://localhost:8082"
 
+tenant: "malawi"
+
 paybill:
-  account-holding-institution-id: "oaf"
+  account-holding-institution-id: "malawi"
   default-ams: "roster"
   default-ams-short-code: "12345678"
   groups:

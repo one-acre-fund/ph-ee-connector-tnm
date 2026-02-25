@@ -1,5 +1,8 @@
 Release Notes
 
+## OAF version 1.0.8
+        * [CP-3931] - Use Malawi as the Platform-TenantId for multitenancy
+
 ## OAF version 1.0.7
         * [CP-3980] - Integrate Elastic APM with PH
 

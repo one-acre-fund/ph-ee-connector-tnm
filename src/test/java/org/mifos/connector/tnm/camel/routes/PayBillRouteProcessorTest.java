@@ -50,6 +50,7 @@ import org.mifos.connector.tnm.exception.TnmConnectorExistingTransactionIdExcept
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.util.ReflectionTestUtils;
 
 class PayBillRouteProcessorTest extends ConnectorTemplateApplicationTests {
 
@@ -71,6 +72,7 @@ class PayBillRouteProcessorTest extends ConnectorTemplateApplicationTests {
     void setUp() {
         MockitoAnnotations.openMocks(this);
         processor = new PayBillRouteProcessor(producerTemplate, zeebeClient, amsPayBillProps, zeebeProperties);
+        ReflectionTestUtils.setField(processor, "tenantId", "malawi");
     }
 
     @DisplayName("Successfully builds account status request body with all required headers present")
@@ -204,7 +206,7 @@ class PayBillRouteProcessorTest extends ConnectorTemplateApplicationTests {
         Assertions.assertEquals("inst-123", exchange.getIn().getHeader(ACCOUNT_HOLDING_INSTITUTION_ID));
         Assertions.assertEquals("test-ams", exchange.getIn().getHeader(AMS_NAME));
         Assertions.assertEquals("application/json", exchange.getIn().getHeader(CONTENT_TYPE));
-        Assertions.assertEquals("inst-123", exchange.getIn().getHeader(TENANT_ID));
+        Assertions.assertEquals("malawi", exchange.getIn().getHeader(TENANT_ID));
         Assertions.assertEquals("test-txn-123", exchange.getIn().getHeader(X_CORRELATION_ID));
         Assertions.assertEquals("test-client", exchange.getIn().getHeader(CLIENT_NAME));
         Assertions.assertTrue((Boolean) exchange.getProperty("isValidationReferencePresent"));
@@ -405,7 +407,7 @@ class PayBillRouteProcessorTest extends ConnectorTemplateApplicationTests {
 
         Assertions.assertEquals("application/json", exchange.getIn().getHeader(CONTENT_TYPE));
         Assertions.assertEquals("transfers", exchange.getIn().getHeader("requestType"));
-        Assertions.assertEquals("oaf", exchange.getIn().getHeader(TENANT_ID));
+        Assertions.assertEquals("malawi", exchange.getIn().getHeader(TENANT_ID));
         Assertions.assertEquals("valid-transaction-id", exchange.getProperty(PAYBILL_TRANSACTION_ID_URL_PARAM));
     }
 
