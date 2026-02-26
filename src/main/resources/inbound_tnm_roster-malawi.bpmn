@@ -6,10 +6,10 @@
     </bpmn:extensionElements>
   </bpmn:message>
   <bpmn:collaboration id="Collaboration_1wqlyzu">
-    <bpmn:participant id="Participant_0vx8mfe" processRef="inbound_tnm_fineract-oaf" />
+    <bpmn:participant id="Participant_0vx8mfe" processRef="inbound_tnm_roster-malawi" />
     <bpmn:participant id="Participant_1i2kxvf" name="TNM" />
   </bpmn:collaboration>
-  <bpmn:process id="inbound_tnm_fineract-oaf" name="inbound_tnm_fineract-oaf" isExecutable="true">
+  <bpmn:process id="inbound_tnm_roster-malawi" name="inbound_tnm_roster-malawi" isExecutable="true">
     <bpmn:sequenceFlow id="Flow_0wlp0mb" sourceRef="Event_08sxsv8" targetRef="delete-tnm-workflow-instancekey" />
     <bpmn:sequenceFlow id="Flow_0sjk9zk" sourceRef="delete-tnm-workflow-instancekey" targetRef="Event_0dr0xdo" />
     <bpmn:sequenceFlow id="Flow_1erlv5p" sourceRef="Gateway_0a4p1g1" targetRef="Event_0dr0xdo" />
@@ -74,7 +74,7 @@
     </bpmn:endEvent>
     <bpmn:serviceTask id="transfer-validation-fineract" name="Validate Request details">
       <bpmn:extensionElements>
-        <zeebe:taskDefinition type="transfer-validation-fineract" />
+        <zeebe:taskDefinition type="transfer-validation" />
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_115c082</bpmn:incoming>
       <bpmn:outgoing>Flow_135cx2r</bpmn:outgoing>
@@ -102,7 +102,7 @@
     </bpmn:exclusiveGateway>
     <bpmn:serviceTask id="transfer-settlement-fineract" name="Payment confirmation">
       <bpmn:extensionElements>
-        <zeebe:taskDefinition type="transfer-settlement-fineract" />
+        <zeebe:taskDefinition type="transfer-settlement" />
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_10e7kba</bpmn:incoming>
       <bpmn:incoming>Flow_0cv1kgw</bpmn:incoming>
@@ -164,7 +164,7 @@
     </bpmn:serviceTask>
     <bpmn:serviceTask id="transfer-firstvalidation-fineract" name="Validate Request details">
       <bpmn:extensionElements>
-        <zeebe:taskDefinition type="transfer-validation-fineract" />
+        <zeebe:taskDefinition type="transfer-validation" />
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_0qrenwb</bpmn:incoming>
       <bpmn:outgoing>Flow_0kg44mi</bpmn:outgoing>
