@@ -1,5 +1,8 @@
 Release Notes
 
+## OAF version 1.0.9
+        * [FD-1833] - Fix transactions staying in progress
+
 ## OAF version 1.0.8
         * [CP-3931] - Use Malawi as the Platform-TenantId for multitenancy
 
