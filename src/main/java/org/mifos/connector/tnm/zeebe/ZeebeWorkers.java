@@ -2,8 +2,10 @@ package org.mifos.connector.tnm.zeebe;
 
 import static org.mifos.connector.tnm.camel.config.CamelProperties.TNM_TRX_ID;
 import static org.mifos.connector.tnm.camel.routes.PayBillRouteProcessor.workflowInstanceStore;
+import static org.mifos.connector.tnm.zeebe.ZeebeVariables.TRANSFER_CREATE_FAILED;
 
 import io.camunda.zeebe.client.ZeebeClient;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.PostConstruct;
@@ -41,7 +43,9 @@ public class ZeebeWorkers {
                 }
 
             }
-            client.newCompleteCommand(job.getKey()).send().join();
+            Map<String, Object> completionVariables = new HashMap<>();
+            completionVariables.put(TRANSFER_CREATE_FAILED, true);
+            client.newCompleteCommand(job.getKey()).variables(completionVariables).send().join();
         })).name("Cleanup").maxJobsActive(workerMaxJobs).open();
     }
 
