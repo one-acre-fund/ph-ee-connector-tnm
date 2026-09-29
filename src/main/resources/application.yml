@@ -5,11 +5,13 @@ spring:
   redis:
     host: ${REDIS_HOST:127.0.0.1}
     port: ${REDIS_PORT:6379}
-    password: ${REDIS_PASSWORD:xxxxxxxxxx}
+    password: ${REDIS_PASSWORD}
     timeout: 2000ms
 
 tnm-connector:
   redis:
+    # redis (default) | memory — in-memory ConcurrentHashMap backup for local/single-pod correlation
+    type: ${TNM_PAYBILL_STORE_TYPE:memory}
     key-prefix: ${REDIS_KEY_PREFIX:tnm-connector}
     ttl:
       paybill-workflow-seconds: ${REDIS_TTL_PAYBILL_WORKFLOW_SECONDS:172800}

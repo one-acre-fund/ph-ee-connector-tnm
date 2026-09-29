@@ -7,8 +7,24 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "tnm-connector.redis")
 public class RedisStoreProperties {
 
+    /**
+     * Paybill correlation store backend: {@code redis} (default) or {@code memory}.
+     */
+    private String type = "redis";
     private String keyPrefix = "tnm-connector";
     private Ttl ttl = new Ttl();
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public boolean isMemoryStore() {
+        return "memory".equalsIgnoreCase(type);
+    }
 
     public String getKeyPrefix() {
         return keyPrefix;

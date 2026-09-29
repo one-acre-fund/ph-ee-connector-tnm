@@ -328,7 +328,84 @@ class PayBillRouteProcessorTest extends ConnectorTemplateApplicationTests {
         processor.processRequestForPayBillPayRoute(exchange);
 
         // Assert
+        verify(paybillStateStore).getWorkflowInstance("OAF-REF-123");
         verify(zeebeClient).newPublishMessageCommand();
+        verify(zeebeClient, org.mockito.Mockito.never()).newCreateInstanceCommand();
+    }
+
+    @DisplayName("Pay without store mapping creates a new workflow instance")
+    @Test
+    void test_process_paybill_without_store_mapping_creates_instance() {
+        TnmPayBillPayRequestDto requestDto = new TnmPayBillPayRequestDto();
+        requestDto.setTransactionId("TEST-TXN-NO-STORE");
+        requestDto.setOafValidationRef("OAF-MISSING");
+        requestDto.setMsisdn("123456789");
+        requestDto.setTransactionAmount("100");
+        requestDto.setAccountNumber("ACC123");
+
+        AmsProperties amsProps = new AmsProperties();
+        amsProps.setAms("TEST-AMS");
+        amsProps.setCurrency("USD");
+        amsProps.setBaseUrl("http://test-url");
+        when(amsPayBillProps.getAmsPropertiesFromShortCode(any())).thenReturn(amsProps);
+        when(amsPayBillProps.getAccountHoldingInstitutionId()).thenReturn("malawi");
+        when(zeebeProperties.getWaitTnmPayRequestPeriod()).thenReturn(60);
+        when(paybillStateStore.getWorkflowInstance("OAF-MISSING")).thenReturn(null);
+
+        Exchange exchange = mock(Exchange.class);
+        when(producerTemplate.send(eq("direct:paybill-transaction-status-check-base"), any(Processor.class))).thenAnswer(invocation -> {
+            Processor processor1 = invocation.getArgument(1, Processor.class);
+            processor1.process(exchange);
+            return exchange;
+        });
+        Message message = mock(Message.class);
+        when(exchange.getIn()).thenReturn(message);
+        when(message.getBody(TnmPayBillPayRequestDto.class)).thenReturn(requestDto);
+
+        CreateProcessInstanceCommandStep1 createProcessInstanceCommand = mock(CreateProcessInstanceCommandStep1.class);
+        CreateProcessInstanceCommandStep1.CreateProcessInstanceCommandStep2 createProcessInstanceCommandStep2 = mock(
+                CreateProcessInstanceCommandStep1.CreateProcessInstanceCommandStep2.class);
+        CreateProcessInstanceCommandStep1.CreateProcessInstanceCommandStep3 createProcessInstanceCommandStep3 = mock(
+                CreateProcessInstanceCommandStep1.CreateProcessInstanceCommandStep3.class);
+        when(zeebeClient.newCreateInstanceCommand()).thenReturn(createProcessInstanceCommand);
+        when(createProcessInstanceCommand.bpmnProcessId(anyString())).thenReturn(createProcessInstanceCommandStep2);
+        when(createProcessInstanceCommandStep2.latestVersion()).thenReturn(createProcessInstanceCommandStep3);
+        when(createProcessInstanceCommandStep3.variables(anyMap())).thenReturn(createProcessInstanceCommandStep3);
+        when(createProcessInstanceCommandStep3.send()).thenReturn(mock(ZeebeFuture.class));
+
+        PublishMessageCommandStep1.PublishMessageCommandStep2 publishMessageCommandStep2 = mock(
+                PublishMessageCommandStep1.PublishMessageCommandStep2.class);
+        PublishMessageCommandStep1.PublishMessageCommandStep3 publishMessageCommandStep3 = mock(
+                PublishMessageCommandStep1.PublishMessageCommandStep3.class);
+        PublishMessageCommandStep1 publishMessageCommand = mock(PublishMessageCommandStep1.class);
+        when(zeebeClient.newPublishMessageCommand()).thenReturn(publishMessageCommand);
+        when(publishMessageCommand.messageName(anyString())).thenReturn(publishMessageCommandStep2);
+        when(publishMessageCommandStep2.correlationKey(anyString())).thenReturn(publishMessageCommandStep3);
+        when(publishMessageCommandStep3.timeToLive(any())).thenReturn(publishMessageCommandStep3);
+        when(publishMessageCommandStep3.variables(anyMap())).thenReturn(publishMessageCommandStep3);
+        when(publishMessageCommandStep3.send()).thenReturn(mock(ZeebeFuture.class));
+
+        processor.processRequestForPayBillPayRoute(exchange);
+
+        verify(paybillStateStore).getWorkflowInstance("OAF-MISSING");
+        verify(zeebeClient).newCreateInstanceCommand();
+        verify(zeebeClient).newPublishMessageCommand();
+    }
+
+    @DisplayName("Validation success with reconciled=false still stores workflow instance")
+    @Test
+    void test_validation_response_success_with_reconciled_false_still_puts_workflow() {
+        Exchange exchange = camelContext.getEndpoint("mock:test").createExchange();
+        exchange.getIn().setBody("{\"transactionId\":\"wf-1\"}");
+        exchange.getIn().setHeader(X_CORRELATION_ID, "corr-false");
+        exchange.getIn().setHeader(CLIENT_NAME, "Jane");
+        exchange.setProperty("isValidationReferencePresent", false);
+
+        processor.processResponseForPayBillValidationResponseSuccess(exchange);
+
+        JSONObject response = new JSONObject(exchange.getIn().getBody(String.class));
+        Assertions.assertEquals(404, response.getInt("status"));
+        verify(paybillStateStore).putWorkflowInstance("corr-false", "wf-1");
     }
 
     @DisplayName("Validate transaction ID that does not exist in the system")

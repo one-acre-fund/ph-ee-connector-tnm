@@ -13,7 +13,7 @@ sourceCompatibility = '17'
 def camelCoreVersion = '3.19.0'
 def zeebeClientVersion = '8.1.4'
 def phConnectorCommonVersion = '1.5.1-gazelle'
-def lombokVersion = '1.18.26'
+def lombokVersion = '1.18.34'
 
 repositories {
     mavenCentral()
