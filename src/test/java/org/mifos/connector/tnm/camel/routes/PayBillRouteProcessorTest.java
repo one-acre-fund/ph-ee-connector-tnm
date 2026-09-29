@@ -47,6 +47,7 @@ import org.mifos.connector.tnm.dto.PayBillValidationResponseDto;
 import org.mifos.connector.tnm.dto.TnmPayBillPayRequestDto;
 import org.mifos.connector.tnm.exception.MissingFieldException;
 import org.mifos.connector.tnm.exception.TnmConnectorExistingTransactionIdException;
+import org.mifos.connector.tnm.flowcomponents.PaybillStateStore;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,6 +65,8 @@ class PayBillRouteProcessorTest extends ConnectorTemplateApplicationTests {
     private AmsPayBillProperties amsPayBillProps;
     @Mock
     private ZeebeProperties zeebeProperties;
+    @Mock
+    private PaybillStateStore paybillStateStore;
 
     @Autowired
     private CamelContext camelContext;
@@ -71,7 +74,7 @@ class PayBillRouteProcessorTest extends ConnectorTemplateApplicationTests {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        processor = new PayBillRouteProcessor(producerTemplate, zeebeClient, amsPayBillProps, zeebeProperties);
+        processor = new PayBillRouteProcessor(producerTemplate, zeebeClient, amsPayBillProps, zeebeProperties, paybillStateStore);
         ReflectionTestUtils.setField(processor, "tenantId", "malawi");
     }
 
@@ -320,7 +323,7 @@ class PayBillRouteProcessorTest extends ConnectorTemplateApplicationTests {
         when(publishMessageCommandStep3.variables(anyMap())).thenReturn(publishMessageCommandStep3);
         when(publishMessageCommandStep3.send()).thenReturn(zeebeFutureMock);
 
-        PayBillRouteProcessor.workflowInstanceStore.put(requestDto.getOafValidationRef(), "TEST-INSTANCE-123");
+        when(paybillStateStore.getWorkflowInstance(requestDto.getOafValidationRef())).thenReturn("TEST-INSTANCE-123");
         // Act
         processor.processRequestForPayBillPayRoute(exchange);
 
@@ -446,8 +449,7 @@ class PayBillRouteProcessorTest extends ConnectorTemplateApplicationTests {
         exchange.getIn().setBody(channelResponse);
         exchange.getIn().setHeader(X_CORRELATION_ID, "corr-123");
         exchange.getIn().setHeader(CLIENT_NAME, "John Doe");
-
-        PayBillRouteProcessor.reconciledStore.put("corr-123", true);
+        exchange.setProperty("isValidationReferencePresent", true);
 
         processor.processResponseForPayBillValidationResponseSuccess(exchange);
 
@@ -458,8 +460,7 @@ class PayBillRouteProcessorTest extends ConnectorTemplateApplicationTests {
         Assertions.assertEquals("Account exists", response.getString("message"));
         Assertions.assertEquals("corr-123", response.getString("oafTransactionReference"));
         Assertions.assertEquals("John Doe", response.getString("clientName"));
-        Assertions.assertEquals("123", PayBillRouteProcessor.workflowInstanceStore.get("corr-123"));
-        Assertions.assertFalse(PayBillRouteProcessor.reconciledStore.containsKey("corr-123"));
+        verify(paybillStateStore).putWorkflowInstance("corr-123", "123");
     }
 
     @DisplayName("Processes error response")

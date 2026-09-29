@@ -1,5 +1,19 @@
 server:
   port: 8085
+
+spring:
+  redis:
+    host: ${REDIS_HOST:127.0.0.1}
+    port: ${REDIS_PORT:6379}
+    password: ${REDIS_PASSWORD:xxxxxxxxxx}
+    timeout: 2000ms
+
+tnm-connector:
+  redis:
+    key-prefix: ${REDIS_KEY_PREFIX:tnm-connector}
+    ttl:
+      paybill-workflow-seconds: ${REDIS_TTL_PAYBILL_WORKFLOW_SECONDS:172800}
+
 camel:
   server-port: 5000
   springboot:

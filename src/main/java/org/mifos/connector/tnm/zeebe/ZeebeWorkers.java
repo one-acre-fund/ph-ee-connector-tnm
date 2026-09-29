@@ -1,7 +1,6 @@
 package org.mifos.connector.tnm.zeebe;
 
 import static org.mifos.connector.tnm.camel.config.CamelProperties.TNM_TRX_ID;
-import static org.mifos.connector.tnm.camel.routes.PayBillRouteProcessor.workflowInstanceStore;
 import static org.mifos.connector.tnm.zeebe.ZeebeVariables.TRANSFER_CREATE_FAILED;
 
 import io.camunda.zeebe.client.ZeebeClient;
@@ -11,6 +10,7 @@ import java.util.Objects;
 import javax.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.mifos.connector.tnm.flowcomponents.PaybillStateStore;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
@@ -24,6 +24,7 @@ import org.springframework.util.CollectionUtils;
 public class ZeebeWorkers {
 
     private final ZeebeClient zeebeClient;
+    private final PaybillStateStore paybillStateStore;
 
     @Value("${zeebe.client.evenly-allocated-max-jobs}")
     private int workerMaxJobs;
@@ -32,14 +33,13 @@ public class ZeebeWorkers {
     void setupWorkers() {
 
         zeebeClient.newWorker().jobType("delete-tnm-workflow-instancekey").handler(((client, job) -> {
-            log.info("Removing Workflow Instance key and Tnm Txn Id from store");
             Map<String, Object> variables = job.getVariablesAsMap();
             if (!CollectionUtils.isEmpty(variables)) {
                 Object tnmTxnIdObj = variables.get(TNM_TRX_ID);
                 if (Objects.nonNull(tnmTxnIdObj)) {
                     String tnmTxnId = tnmTxnIdObj.toString();
-                    log.debug("Txn Id Removed :{}", tnmTxnId);
-                    workflowInstanceStore.remove(tnmTxnId);
+                    log.info("Txn Id Removed :{}", tnmTxnId);
+                    paybillStateStore.removeWorkflowInstance(tnmTxnId);
                 }
 
             }
