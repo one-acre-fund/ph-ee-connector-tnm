@@ -123,4 +123,29 @@ class ZeebeWorkersTest {
         verify(paybillStateStore, never()).removeWorkflowInstance(anyString());
         verify(completeCommand).variables(eq(Map.of(TRANSFER_CREATE_FAILED, true)));
     }
+
+    @Test
+    @DisplayName("Cleanup worker skips remove when tnmTrxId value is null")
+    void cleanup_shouldSkipRemoveWhenTxnIdValueNull() throws Exception {
+        Map<String, Object> variables = new HashMap<>();
+        variables.put(TNM_TRX_ID, null);
+        when(job.getVariablesAsMap()).thenReturn(variables);
+
+        cleanupHandler.handle(jobClient, job);
+
+        verify(paybillStateStore, never()).removeWorkflowInstance(anyString());
+        verify(completeCommand).send();
+    }
+
+    @Test
+    @DisplayName("Cleanup worker converts non-string tnmTrxId via toString")
+    void cleanup_shouldConvertTxnIdWithToString() throws Exception {
+        Map<String, Object> variables = new HashMap<>();
+        variables.put(TNM_TRX_ID, 12345);
+        when(job.getVariablesAsMap()).thenReturn(variables);
+
+        cleanupHandler.handle(jobClient, job);
+
+        verify(paybillStateStore).removeWorkflowInstance("12345");
+    }
 }

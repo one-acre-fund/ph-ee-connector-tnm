@@ -163,6 +163,39 @@ class PaybillStateStoreTest {
         memoryStore().logStoreBackend();
     }
 
+    @Test
+    @DisplayName("Memory remove of unknown key is a no-op")
+    void memoryStore_removeUnknownKey_shouldBeNoOp() {
+        InMemoryPaybillStateStore store = memoryStore();
+        store.removeWorkflowInstance("missing");
+        assertNull(store.getWorkflowInstance("missing"));
+    }
+
+    @Test
+    @DisplayName("Redis and memory use the same key prefix format")
+    void stores_shouldUseSameKeyFormat() {
+        when(valueOperations.get(workflowKey(TXN_ID))).thenReturn("wf");
+        assertEquals("wf", redisStore().getWorkflowInstance(TXN_ID));
+
+        InMemoryPaybillStateStore memory = memoryStore();
+        memory.putWorkflowInstance(TXN_ID, "wf");
+        assertEquals("wf", memory.getWorkflowInstance(TXN_ID));
+    }
+
+    @Test
+    @DisplayName("Empty key prefix still builds workflow keys")
+    void redisStore_shouldWorkWithEmptyKeyPrefix() {
+        RedisStoreProperties properties = new RedisStoreProperties();
+        properties.setKeyPrefix("");
+        properties.getTtl().setPaybillWorkflowSeconds(30);
+        RedisPaybillStateStore store = new RedisPaybillStateStore(redisTemplate, properties);
+
+        store.putWorkflowInstance(TXN_ID, "workflow-456");
+
+        verify(valueOperations).set(org.mockito.ArgumentMatchers.eq(":paybill:workflow:" + TXN_ID),
+                org.mockito.ArgumentMatchers.eq("workflow-456"), org.mockito.ArgumentMatchers.any(Duration.class));
+    }
+
     private RedisPaybillStateStore redisStore() {
         return new RedisPaybillStateStore(redisTemplate, redisProperties());
     }
