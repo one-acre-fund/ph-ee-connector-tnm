@@ -3,6 +3,7 @@ package org.mifos.connector.tnm.camel.routes;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.ACCOUNT_HOLDING_INSTITUTION_ID;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.AMS_NAME;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.BUSINESS_SHORT_CODE;
+import static org.mifos.connector.tnm.camel.config.CamelProperties.CAMEL_HTTP_RESPONSE_CODE;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.CHANNEL_REQUEST;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.CHANNEL_URL;
 import static org.mifos.connector.tnm.camel.config.CamelProperties.CLIENT_ACCOUNT_NUMBER;
@@ -62,6 +63,7 @@ import org.mifos.connector.tnm.dto.TnmPayBillPayRequestDto;
 import org.mifos.connector.tnm.exception.MissingFieldException;
 import org.mifos.connector.tnm.exception.TnmConnectorExistingTransactionIdException;
 import org.mifos.connector.tnm.exception.TnmConnectorJsonProcessingException;
+import org.mifos.connector.tnm.flowcomponents.PaybillStateStore;
 import org.mifos.connector.tnm.util.TnmUtils;
 import org.mifos.connector.tnm.zeebe.ZeebeVariables;
 import org.springframework.beans.factory.annotation.Value;
@@ -82,13 +84,12 @@ public class PayBillRouteProcessor {
     private final AmsPayBillProperties amsPayBillProps;
 
     private final ZeebeProperties zeebeProperties;
+    private final PaybillStateStore paybillStateStore;
 
     @Value("${channel.host}")
     private String channelUrl;
 
     private ObjectMapper objectMapper = TnmUtils.getObjectMapper();
-    public static Map<String, Boolean> reconciledStore = new HashMap<>();
-    public static Map<String, String> workflowInstanceStore = new HashMap<>();
 
     @Value("${tenant}")
     private String tenantId;
@@ -117,13 +118,17 @@ public class PayBillRouteProcessor {
                 Objects.nonNull(shortCodeFromReq) ? shortCodeFromReq.toString() : amsPayBillProps.getDefaultAmsShortCode());
         final String amsName = amsProperties.getAms();
         final String currency = Objects.nonNull(currencyFromHeaders) ? currencyFromHeaders.toString() : amsProperties.getCurrency();
+        final String primaryIdentifier = getPrimaryIdentifierName(amsName);
         exchange.getIn().removeHeaders("*");
         exchange.getIn().setHeader("amsUrl", amsProperties.getBaseUrl());
         exchange.getIn().setHeader(CONTENT_TYPE, CONTENT_TYPE_VAL);
         exchange.getIn().setHeader("amsName", amsName);
         exchange.getIn().setHeader("accountHoldingInstitutionId", amsPayBillProps.getAccountHoldingInstitutionId());
+        exchange.getIn().setHeader(CHANNEL_URL, channelUrl);
+        exchange.getIn().setHeader("primaryIdentifier", primaryIdentifier);
+        exchange.getIn().setHeader("primaryIdentifierValue", clientAccountNumber);
         exchange.setProperty("channelUrl", channelUrl);
-        exchange.setProperty("primaryIdentifier", getPrimaryIdentifierName(amsName));
+        exchange.setProperty("primaryIdentifier", primaryIdentifier);
         exchange.setProperty("primaryIdentifierValue", clientAccountNumber);
         exchange.setProperty("secondaryIdentifier", SECONDARY_IDENTIFIER_NAME);
         exchange.setProperty("secondaryIdentifierValue", msisdn);
@@ -153,9 +158,7 @@ public class PayBillRouteProcessor {
         log.debug("Validation IsReconciled: {}", isReconciled);
         log.debug("Validation Transaction ID present: {}", validationTransactionId);
 
-        // Add the validation transactionID as clientCorrelationId in the reconciledStore
         String clientCorrelationId = validationTransactionId;
-        reconciledStore.put(clientCorrelationId, isReconciled);
 
         try {
 
@@ -166,8 +169,10 @@ public class PayBillRouteProcessor {
             e.getIn().setHeader(X_CORRELATION_ID, clientCorrelationId);
             e.getIn().setHeader(CONTENT_TYPE, CONTENT_TYPE_VAL);
             e.getIn().setHeader(CLIENT_NAME, validationResponseDto.getClientName());
+            e.getIn().setHeader(CHANNEL_URL, channelUrl);
 
-            e.setProperty("isValidationReferencePresent", isReconciled);
+            // Kept on the exchange for the sync channel round-trip (same Camel exchange)
+            e.setProperty(IS_VALIDATION_REFERENCE_PRESENT, isReconciled);
             e.setProperty("channelUrl", channelUrl);
 
             GsmaTransfer gsmaTransfer = TnmUtils.createGsmaTransferDto(validationResponseDto, clientCorrelationId,
@@ -230,8 +235,8 @@ public class PayBillRouteProcessor {
         variables.put(SERVER_TRANSACTION_ID, tnmTransactionId);
         variables.put(EXTERNAL_ID, tnmTransactionId);
 
-        // Getting TNM workflow transaction id and removing key
-        String workflowInstanceKey = workflowInstanceStore.get(oafTransactionReference);
+        // Getting TNM workflow transaction id
+        String workflowInstanceKey = paybillStateStore.getWorkflowInstance(oafTransactionReference);
 
         variables.put(IS_VALIDATION_REFERENCE_PRESENT, isReconciled && workflowInstanceKey != null);
         variables.put(TRANSACTION_ID, tnmTransactionId);
@@ -300,9 +305,19 @@ public class PayBillRouteProcessor {
         exchange.getIn().setHeader(CONTENT_TYPE, CONTENT_TYPE_VAL);
         exchange.getIn().setHeader("requestType", "transfers");
         exchange.getIn().setHeader(TENANT_ID, tenantId);
+        exchange.getIn().setHeader(PAYBILL_TRANSACTION_ID_URL_PARAM, tnmTransactionId.toString());
+        exchange.getIn().setHeader(CHANNEL_URL, channelUrl);
 
         exchange.setProperty(PAYBILL_TRANSACTION_ID_URL_PARAM, tnmTransactionId.toString());
         exchange.setProperty(CHANNEL_URL, channelUrl);
+    }
+
+    private String snippet(String responseBody) {
+        if (!StringUtils.hasText(responseBody)) {
+            return "";
+        }
+        String trimmed = responseBody.strip();
+        return trimmed.substring(0, Math.min(trimmed.length(), 180));
     }
 
     /**
@@ -313,6 +328,13 @@ public class PayBillRouteProcessor {
      */
     public void processResponseForPayBillValidationResponseSuccess(Exchange e) {
         String channelResponseBodyString = e.getIn().getBody(String.class);
+        Object httpResponseCode = e.getIn().getHeader(CAMEL_HTTP_RESPONSE_CODE);
+        if (channelResponseBodyString == null || !channelResponseBodyString.stripLeading().startsWith("{")) {
+            log.error("Unexpected channel response for GSMA transaction start. httpStatus={}, bodySnippet={}", httpResponseCode,
+                    snippet(channelResponseBodyString));
+            throw new TnmConnectorJsonProcessingException(
+                    "Channel GSMA transaction response was not a JSON object. httpStatus=" + httpResponseCode);
+        }
         JSONObject channelResponse = new JSONObject(channelResponseBodyString);
         log.debug("channelResponse:{}", channelResponse);
         String workflowInstanceKey = channelResponse.getString("transactionId");
@@ -320,10 +342,8 @@ public class PayBillRouteProcessor {
         // Retrieving client correlation ID added to the header in --- route
         String clientCorrelationId = e.getIn().getHeader(X_CORRELATION_ID).toString();
         Object clientName = e.getIn().getHeader(CLIENT_NAME);
-        Boolean reconciled = reconciledStore.get(clientCorrelationId);
-        // Storing the key value
-        workflowInstanceStore.put(clientCorrelationId, workflowInstanceKey);
-        reconciledStore.remove(clientCorrelationId);
+        Boolean reconciled = e.getProperty(IS_VALIDATION_REFERENCE_PRESENT, Boolean.class);
+        paybillStateStore.putWorkflowInstance(clientCorrelationId, workflowInstanceKey);
 
         e.getIn().setBody(
                 buildPayBillValidationResponse(reconciled, clientCorrelationId, Objects.nonNull(clientName) ? clientName.toString() : null)

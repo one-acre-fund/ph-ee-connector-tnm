@@ -1,5 +1,8 @@
 Release Notes
 
+## OAF version 1.1.0
+        * [FD-1916] - Use redis as memory storage for all the ph connectors
+
 ## OAF version 1.0.9
         * [FD-1833] - Fix transactions staying in progress
 
