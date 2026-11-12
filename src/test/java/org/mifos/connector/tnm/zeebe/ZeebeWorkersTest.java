@@ -19,6 +19,7 @@ import io.camunda.zeebe.client.api.response.ActivatedJob;
 import io.camunda.zeebe.client.api.worker.JobClient;
 import io.camunda.zeebe.client.api.worker.JobHandler;
 import io.camunda.zeebe.client.api.worker.JobWorkerBuilderStep1;
+import java.time.Duration;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -72,7 +73,8 @@ class ZeebeWorkersTest {
         when(workerBuilderStep3.name(anyString())).thenReturn(workerBuilderStep3);
         when(workerBuilderStep3.maxJobsActive(anyInt())).thenReturn(workerBuilderStep3);
 
-        ZeebeWorkers zeebeWorkers = new ZeebeWorkers(zeebeClient, paybillStateStore);
+        ZeebeWorkers zeebeWorkers = new ZeebeWorkers(zeebeClient, paybillStateStore,
+                new ZeebeWorkerDrain(Duration.ofSeconds(5), Duration.ofSeconds(5)));
         ReflectionTestUtils.setField(zeebeWorkers, "workerMaxJobs", 5);
         zeebeWorkers.setupWorkers();
 

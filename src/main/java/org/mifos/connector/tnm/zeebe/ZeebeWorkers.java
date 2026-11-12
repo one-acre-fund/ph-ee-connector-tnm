@@ -7,11 +7,12 @@ import io.camunda.zeebe.client.ZeebeClient;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import javax.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.mifos.connector.tnm.flowcomponents.PaybillStateStore;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
@@ -25,14 +26,18 @@ public class ZeebeWorkers {
 
     private final ZeebeClient zeebeClient;
     private final PaybillStateStore paybillStateStore;
+    private final ZeebeWorkerDrain drain;
 
     @Value("${zeebe.client.evenly-allocated-max-jobs}")
     private int workerMaxJobs;
 
-    @PostConstruct
+    // Workers open only once the application is ready, after Camel and the web server have
+    // started. Opened earlier, a starting pod activates jobs it cannot process yet, and a pod
+    // replaced during startup would hold them until the broker job timeout (FD-1939).
+    @EventListener(ApplicationReadyEvent.class)
     void setupWorkers() {
 
-        zeebeClient.newWorker().jobType("delete-tnm-workflow-instancekey").handler(((client, job) -> {
+        drain.register(zeebeClient.newWorker().jobType("delete-tnm-workflow-instancekey").handler(drain.track(((client, job) -> {
             Map<String, Object> variables = job.getVariablesAsMap();
             if (!CollectionUtils.isEmpty(variables)) {
                 Object tnmTxnIdObj = variables.get(TNM_TRX_ID);
@@ -46,7 +51,7 @@ public class ZeebeWorkers {
             Map<String, Object> completionVariables = new HashMap<>();
             completionVariables.put(TRANSFER_CREATE_FAILED, true);
             client.newCompleteCommand(job.getKey()).variables(completionVariables).send().join();
-        })).name("Cleanup").maxJobsActive(workerMaxJobs).open();
+        }))).name("Cleanup").maxJobsActive(workerMaxJobs).open());
     }
 
 }
