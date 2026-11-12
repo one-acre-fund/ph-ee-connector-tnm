@@ -1,5 +1,8 @@
 Release Notes
 
+## OAF version 1.1.1
+        * [FD-1939] - Drain Zeebe jobs on shutdown and open workers once the app is ready
+
 ## OAF version 1.1.0
         * [FD-1916] - Use redis as memory storage for all the ph connectors
 
